@@ -2,4 +2,4 @@
 
 This is my Portfolio Website 
 
-I had build this with React Js and Tailwind CS
+I had build this with React Js and Tailwind CSS
