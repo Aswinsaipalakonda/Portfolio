@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { Menu, X } from 'lucide-react';
 
 export const Navbar = () => {
@@ -13,19 +13,20 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm w-full">
+      <div className="w-full max-w-7xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <a href="/" className="text-white text-xl font-bold">
-            Aswin
+            Aswinsai
           </a>
           
           {/* Mobile menu button */}
           <button
             className="md:hidden p-2 text-gray-400 hover:text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X /> : <Menu />}
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
           {/* Desktop navigation */}
@@ -50,13 +51,13 @@ export const Navbar = () => {
 
         {/* Mobile navigation */}
         <div
-          className={`md:hidden transition-all duration-300 ease-in-out ${
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
             isMenuOpen
-              ? 'max-h-96 opacity-100 visible'
+              ? 'max-h-[400px] opacity-100 visible'
               : 'max-h-0 opacity-0 invisible'
           }`}
         >
-          <div className="pt-4 pb-3 space-y-3">
+          <div className="pt-4 pb-3 space-y-2">
             <NavLink onClick={() => scrollToSection('about')}>About</NavLink>
             <NavLink onClick={() => scrollToSection('skills')}>Skills</NavLink>
             <NavLink onClick={() => scrollToSection('languages')}>Languages</NavLink>
@@ -83,7 +84,7 @@ const NavLink = ({
   children 
 }: { 
   onClick: () => void; 
-  children: React.ReactNode;
+  children: ReactNode;
 }) => (
   <button
     onClick={onClick}

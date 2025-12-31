@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { About } from './About';
 import { Skills } from './Skills/Skills';
 import { Languages } from './Languages';
@@ -9,7 +9,7 @@ import { Contact } from './Contact/Contact';
 
 export const Content = () => {
   return (
-    <main className="relative z-10">
+    <main className="relative z-10 w-full max-w-full overflow-x-hidden">
       <About />
       <Skills />
       <Languages />
