@@ -1,0 +1,14 @@
+# robots.txt for aswinsai.dev
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://aswinsai.dev/sitemap.xml
+
+# Google Bot
+User-agent: Googlebot
+Allow: /
+
+# Bing Bot
+User-agent: Bingbot
+Allow: /

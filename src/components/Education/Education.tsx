@@ -4,12 +4,12 @@ import { EducationCard } from './EducationCard';
 
 const education = [
   {
-    school: "Z.P.High School",
-    degree: "10th Standard",
-    date: "Apr 2020 - Apr 2021",
-    grade: "93.5%",
-    description: "Completed my class 10 education in Z.P.High School at Madapam, Srikakulam.",
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRxHnPbXM3eokyQCG6enIwGBGKN8UqUehPfQ&s",
+    school: "MVGR College of Engineering",
+    degree: "B.Tech",
+    date: "2023 - 2027",
+    grade: "82%",
+    description: "Currently pursuing my B.Tech in Computer Science and Engineering at MVGR College of Engineering, where I am specializing in IOT, Cyber Security and Blockchain Technology.",
+    logo: "https://mansasedu.org/images/mansas.jpg",
     isLeft: true
   },
   {
@@ -20,7 +20,16 @@ const education = [
     description: "Completed my class 12 education in Sri Chaitanya College at Srikakulam, where I studied Maths, Physics, Chemistry as the primary subjects.",
     logo: "https://www.pngkit.com/png/full/248-2487068_a-few-words-about-sri-chaitanya-sri-chaitanya.png",
     isLeft: false
-  }
+  },
+  {
+    school: "Z.P.High School",
+    degree: "10th Standard",
+    date: "Apr 2020 - Apr 2021",
+    grade: "93.5%",
+    description: "Completed my class 10 education in Z.P.High School at Madapam, Srikakulam.",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRxHnPbXM3eokyQCG6enIwGBGKN8UqUehPfQ&s",
+    isLeft: true
+  },
 ];
 
 export const Education: React.FC = () => {

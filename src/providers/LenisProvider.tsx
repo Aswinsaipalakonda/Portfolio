@@ -6,9 +6,12 @@ export const LenisProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      duration: 1.8,                // Longer duration = lighter, floatier feel
+      easing: (t: number) => 1 - Math.pow(1 - t, 4), // Quartic ease-out for extra softness
       smoothWheel: true,
+      wheelMultiplier: 0.8,         // Reduce wheel speed for a lighter sensation
+      touchMultiplier: 1.5,         // Slightly boost touch for mobile responsiveness
+      infinite: false,
     });
 
     lenisRef.current = lenis;
