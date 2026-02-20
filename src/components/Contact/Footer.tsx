@@ -41,7 +41,7 @@ export const Footer = () => {
       </div>
       
       <p className="text-gray-400 text-sm">
-        © {new Date().getFullYear()} Aswin Sai💖. All rights reserved.
+        © {new Date().getFullYear()} Aswinsai. All rights reserved.
       </p>
     </footer>
   );

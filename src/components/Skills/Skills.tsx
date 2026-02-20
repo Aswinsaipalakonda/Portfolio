@@ -35,7 +35,7 @@ const technicalSkills = {
     { name: 'Canva', icon: 'https://www.vectorlogo.zone/logos/canva/canva-icon.svg' },
     { name: 'WordPress', icon: 'https://www.vectorlogo.zone/logos/wordpress/wordpress-icon.svg' },
     { name: 'Netlify', icon: 'https://www.svgrepo.com/show/376339/netlify.svg' },
-    { name: 'Vercel', icon: 'https://camo.githubusercontent.com/4e7f5b49af742238dd00ce8d2376716e2919162945cda776c8cd33ea8e8822a4/68747470733a2f2f7374617469632e77696b69612e6e6f636f6f6b69652e6e65742f6c6f676f70656469612f696d616765732f612f61372f56657263656c5f66617669636f6e2e7376672f7265766973696f6e2f6c61746573743f63623d3230323231303236313535383231' },
+    { name: 'Vercel', icon: 'https://favicons.statusgator.com/vercel.png' },
     { name: 'Webflow', icon: 'https://www.vectorlogo.zone/logos/webflow/webflow-icon.svg'},
     { name: 'FlutterFlow', icon: 'https://docs.flutterflow.io/logos/logoMark_outlinePrimary_transparent.svg'},
     { name: 'Adalo', icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnAw71DBcX3N0AnwvHgAsr-HIIDsfgR2JpKw&s' }

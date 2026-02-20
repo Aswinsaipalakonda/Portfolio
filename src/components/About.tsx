@@ -5,7 +5,7 @@ export const About = () => {
   const roles = [
     'Full Stack Developer',
     'No-Code Developer',
-    'Tech Enthusiast'
+    'AI Enthusiast'
   ];
 
   const scrollToContact = () => {
