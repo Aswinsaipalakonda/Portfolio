@@ -1,9 +1,9 @@
-# robots.txt for aswinsai.dev
+# robots.txt for aswinsai.tech
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://aswinsai.dev/sitemap.xml
+Sitemap: https://aswinsai.tech/sitemap.xml
 
 # Google Bot
 User-agent: Googlebot

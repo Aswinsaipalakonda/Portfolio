@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://aswinsai.dev/</loc>
+    <loc>https://aswinsai.tech/</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://aswinsai.dev/#about</loc>
+    <loc>https://aswinsai.tech/#about</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://aswinsai.dev/#skills</loc>
+    <loc>https://aswinsai.tech/#skills</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aswinsai.dev/#projects</loc>
+    <loc>https://aswinsai.tech/#projects</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aswinsai.dev/#certificates</loc>
+    <loc>https://aswinsai.tech/#certificates</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aswinsai.dev/#education</loc>
+    <loc>https://aswinsai.tech/#education</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aswinsai.dev/#contact</loc>
+    <loc>https://aswinsai.tech/#contact</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
