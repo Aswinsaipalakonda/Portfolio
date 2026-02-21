@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/assets/images/aswinlogo.png" alt="Aswinsai Logo" width="100" />
+  <img src="public/assets/icons/android-chrome-512x512.png" alt="Aswinsai Logo" width="100" />
 </p>
 
 <h1 align="center">🚀 Aswinsai Palakonda — Portfolio</h1>
