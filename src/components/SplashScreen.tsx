@@ -26,8 +26,9 @@ export const SplashScreen = ({ onComplete }: SplashScreenProps) => {
 
   // Smooth progress value
   const smoothProgress = useSpring(0, {
-    stiffness: 40,
-    damping: 15
+    stiffness: 20,
+    damping: 10,
+    mass: 0.5
   });
 
   useEffect(() => {
@@ -43,17 +44,18 @@ export const SplashScreen = ({ onComplete }: SplashScreenProps) => {
     <motion.div
       initial={{ opacity: 1 }}
       exit={{ 
-        scale: 10,
+        scale: 15,
         opacity: 0,
+        filter: "blur(10px)",
         transition: { 
-          duration: 1.5, 
-          ease: [0.7, 0, 0.3, 1] 
+          duration: 1.2, 
+          ease: [0.76, 0, 0.24, 1] 
         } 
       }}
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0a0a0a]"
+      className="fixed inset-0 z-100 flex items-center justify-center bg-[#0a0a0a]"
     >
       <div className="relative flex flex-col items-center w-full max-w-4xl px-4">
-        <div className="relative w-full aspect-[4/1]">
+        <div className="relative w-full aspect-4/1">
           <svg
             viewBox="0 0 800 200"
             className="w-full h-full"
@@ -105,26 +107,26 @@ export const SplashScreen = ({ onComplete }: SplashScreenProps) => {
 
               {/* Wave 1 */}
               <motion.path
-                d="M 0 10 Q 100 0 200 10 Q 300 20 400 10 Q 500 0 600 10 Q 700 20 800 10 V 50 H 0 Z"
+                d="M 0 20 Q 100 -20 200 20 Q 300 60 400 20 Q 500 -20 600 20 Q 700 60 800 20 Q 900 -20 1000 20 Q 1100 60 1200 20 V 100 H 0 Z"
                 fill="white"
                 style={{ y: wave1Y }}
-                animate={{ x: [0, -200, 0] }}
+                animate={{ x: [0, -400] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
               />
 
               {/* Wave 2 */}
               <motion.path
-                d="M 0 10 Q 100 20 200 10 Q 300 0 400 10 Q 500 20 600 10 Q 700 0 800 10 V 50 H 0 Z"
-                fill="rgba(255,255,255,0.5)"
+                d="M 0 20 Q 100 60 200 20 Q 300 -20 400 20 Q 500 60 600 20 Q 700 -20 800 20 Q 900 60 1000 20 Q 1100 -20 1200 20 V 100 H 0 Z"
+                fill="rgba(255,255,255,0.4)"
                 style={{ y: wave2Y }}
-                animate={{ x: [-200, 0, -200] }}
+                animate={{ x: [-400, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
               />
             </g>
           </svg>
 
           {/* Counter info */}
-          <div className="absolute bottom-[-1rem] right-4 flex items-baseline gap-2">
+          <div className="absolute -bottom-4 right-4 flex items-baseline gap-2">
             <span className="text-[10px] text-gray-600 uppercase tracking-widest">loading</span>
             <span className="text-sm font-bold text-white tabular-nums">{counter}%</span>
           </div>

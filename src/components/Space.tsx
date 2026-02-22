@@ -17,10 +17,10 @@ export const Space = () => {
     <>
       <Stars
         ref={starsRef}
-        radius={300}
+        radius={100}
         depth={50}
-        count={200000}
-        factor={10}
+        count={10000}
+        factor={4}
         saturation={0}
         fade
         speed={1.5}

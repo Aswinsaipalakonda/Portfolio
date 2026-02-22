@@ -6,24 +6,29 @@ export const LenisProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.8,                // Longer duration = lighter, floatier feel
-      easing: (t: number) => 1 - Math.pow(1 - t, 4), // Quartic ease-out for extra softness
+      duration: 1.2,                // Shorter duration = snappier, more responsive feel
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Exponential ease out for responsive curve
       smoothWheel: true,
-      wheelMultiplier: 0.8,         // Reduce wheel speed for a lighter sensation
-      touchMultiplier: 1.5,         // Slightly boost touch for mobile responsiveness
+      wheelMultiplier: 1,           // Normal wheel speed so users don't have to crank the scroll wheel
+      touchMultiplier: 2,           // Boost touch for mobile responsiveness
       infinite: false,
     });
 
     lenisRef.current = lenis;
 
+    let rafId: number;
+
     function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+      if (lenisRef.current === lenis) {
+        lenis.raf(time);
+        rafId = requestAnimationFrame(raf);
+      }
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     return () => {
+      cancelAnimationFrame(rafId);
       lenis.destroy();
     };
   }, []);

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { TypeWriter } from './TypeWriter';
+import { FlipWords } from "@/components/ui/flip-words";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 export const About = () => {
   const roles = [
@@ -32,31 +33,32 @@ export const About = () => {
           >
             Hi, I am
             <br />
-            <span className="bg-gradient-to-r from-[#915EFF] via-purple-400 to-[#915EFF] bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-[#915EFF] via-purple-400 to-[#915EFF] bg-clip-text text-transparent">
               Aswinsai Palakonda
             </span>
           </motion.h1>
           
-          <motion.h2 
-            className="text-xl sm:text-2xl md:text-3xl text-gray-200"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            I am a <TypeWriter words={roles} />
-          </motion.h2>
+          <div className="h-[4vh] sm:h-[6vh]">
+            <motion.h2 
+              className="text-xl sm:text-2xl md:text-3xl text-gray-200 mt-2 whitespace-nowrap"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              I am a
+              <FlipWords 
+                words={roles}
+                className="text-[#915EFF] font-bold"
+              />
+            </motion.h2>
+          </div>
           
-          <motion.p 
-            className="text-gray-400 max-w-xl text-sm sm:text-base leading-relaxed mx-auto md:mx-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            I am a motivated and versatile individual, always eager to take on new challenges. 
-            With a passion for learning I am dedicated to delivering high-quality results. 
-            With a positive attitude and a growth mindset, I am ready to make a meaningful 
-            contribution and achieve great things.
-          </motion.p>
+          <TextGenerateEffect
+            words="I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things."
+            className="text-gray-400 max-w-xl text-sm sm:text-base mx-auto md:mx-0 font-normal"
+            duration={0.8}
+            filter={true}
+          />
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -68,7 +70,7 @@ export const About = () => {
               onClick={scrollToContact}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 rounded-full bg-gradient-to-r from-[#915EFF] to-purple-600 text-white font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+              className="px-8 py-3 rounded-full bg-linear-to-r from-[#915EFF] to-purple-600 text-white font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
             >
               Hire Me
             </motion.button>
@@ -93,7 +95,7 @@ export const About = () => {
         >
           <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
             {/* Animated glow effect */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#915EFF] via-purple-500 to-[#915EFF] opacity-75 blur-2xl animate-pulse"></div>
+            <div className="absolute inset-0 rounded-full bg-linear-to-r from-[#915EFF] via-purple-500 to-[#915EFF] opacity-75 blur-2xl animate-pulse"></div>
             
             {/* Main image container */}
             <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-[#915EFF] shadow-2xl shadow-purple-500/30">
