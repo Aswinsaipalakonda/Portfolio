@@ -1,14 +1,12 @@
-
-import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
   date: string;
-  demoLink: string;
-  githubLink: string;
+  demoLink?: string;
+  githubLink?: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -17,46 +15,49 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   image,
   date,
   demoLink,
-  githubLink
+  githubLink,
 }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="bg-[#151030] rounded-2xl overflow-hidden"
+    <div
+      className="bg-[#151030] rounded-3xl overflow-hidden h-full w-full border border-white/10 shadow-2xl flex flex-col md:flex-row-reverse group/card"
     >
-      <div className="relative group">
-        <img 
-          src={image} 
+      <div className="relative group shrink-0 w-full md:w-[60%] h-1/2 md:h-full">
+        <img
+          src={image}
           alt={title}
-          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-          <a 
-            href={demoLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 bg-[#915EFF] rounded-full hover:bg-[#7f4fff] transition-colors"
-          >
-            <ExternalLink className="w-5 h-5" />
-          </a>
-          <a 
-            href={githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 bg-[#915EFF] rounded-full hover:bg-[#7f4fff] transition-colors"
-          >
-            <Github className="w-5 h-5" />
-          </a>
+      </div>
+
+      <div className="p-6 md:p-8 lg:p-12 flex-1 flex flex-col justify-center">
+        <p className="text-sm text-[#915EFF] font-medium mb-2">{date}</p>
+        <h3 className="text-xl md:text-3xl font-bold text-white mb-3 md:mb-4">{title}</h3>
+        <p className="text-gray-400 text-sm md:text-base line-clamp-4 md:line-clamp-6 leading-relaxed mb-6 md:mb-8">{description}</p>
+        <div className="flex items-center gap-4 mt-auto md:mt-0">
+          {demoLink && demoLink !== "#" && (
+            <a
+              href={demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center p-3 bg-white/5 border border-white/10 rounded-full hover:bg-[#915EFF] hover:border-[#915EFF] transition-all text-gray-300 hover:text-white"
+              title="Live Demo"
+            >
+              <ExternalLink className="w-5 h-5" />
+            </a>
+          )}
+          {githubLink && githubLink !== "#" && (
+            <a
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center p-3 bg-white/5 border border-white/10 rounded-full hover:bg-[#915EFF] hover:border-[#915EFF] transition-all text-gray-300 hover:text-white"
+              title="View Source on GitHub"
+            >
+              <Github className="w-5 h-5" />
+            </a>
+          )}
         </div>
       </div>
-      
-      <div className="p-6">
-        <p className="text-sm text-gray-400 mb-2">{date}</p>
-        <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
-        <p className="text-gray-400">{description}</p>
-      </div>
-    </motion.div>
+    </div>
   );
 };

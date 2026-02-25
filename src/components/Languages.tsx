@@ -1,86 +1,209 @@
-
+import React, { useEffect, useState, memo } from 'react';
 import { motion } from 'framer-motion';
 
-const languages = [
-  { 
-    name: 'C', 
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/1200px-C_Programming_Language.svg.png',
-    proficiency: 90
-  },
-  { 
-    name: 'C++', 
-    icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg',
-    proficiency: 85
-  },
-  { 
-    name: 'Python', 
-    icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg',
-    proficiency: 90
-  },
-  { 
-    name: 'HTML', 
-    icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg',
-    proficiency: 100
-  },
-  { 
-    name: 'CSS', 
-    icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg',
-    proficiency: 90
-  },
-  { 
-    name: 'SQL', 
-    icon: 'https://www.svgrepo.com/show/354099/mysql.svg',
-    proficiency: 80
-  },  // Added missing comma here
-  { 
-    name: 'Javascript', 
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png',
-    proficiency: 85
-  },
-  { 
-    name: 'React Js', 
-    icon: 'https://www.logo.wine/a/logo/React_(web_framework)/React_(web_framework)-Logo.wine.svg',
-    proficiency: 85
-  }
+type IconType = 'html' | 'css' | 'javascript' | 'react' | 'node' | 'tailwind';
+type GlowColor = 'cyan' | 'purple';
+
+interface SkillIconProps {
+  type: IconType;
+}
+
+interface SkillConfig {
+  id: string;
+  type: IconType;
+  radius: number;
+  speed: number;
+  phaseShift?: number;
+}
+
+const HtmlIcon = () => (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+        <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z" fill="#E34F26"/>
+    </svg>
+);
+
+const CssIcon = () => (
+    <svg viewBox="0 0 24 24" fill="#1572B6" className="w-full h-full">
+      <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.751L12 19.351l5.379-1.443.744-8.157z" />
+    </svg>
+);
+
+const JsIcon = () => (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+        <rect width="24" height="24" fill="#F7DF1E"/>
+        <path d="M22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z" fill="#323330"/>
+    </svg>
+);
+
+const ReactIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
+        <g stroke="#61DAFB" strokeWidth="1" fill="none">
+          <circle cx="12" cy="12" r="2.05" fill="#61DAFB"/>
+          <ellipse cx="12" cy="12" rx="11" ry="4.2"/>
+          <ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(60 12 12)"/>
+          <ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(120 12 12)"/>
+        </g>
+    </svg>
+);
+
+const NodeIcon = () => (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+        <path d="M11.998 24c-.321 0-.641-.084-.922-.247l-2.936-1.737c-.438-.245-.224-.332-.08-.383.585-.203.703-.25 1.328-.602.065-.037.151-.023.218.017l2.256 1.339c.082.045.198.045.275 0l8.795-5.076c.082-.047.135-.141.135-.241V6.921c0-.103-.055-.198-.137-.246l-8.791-5.072c-.081-.047-.189-.047-.273 0L2.075 6.675c-.084.048-.139.144-.139.246v10.146c0 .1.055.194.139.241l2.409 1.392c1.307.654 2.108-.116 2.108-.89V7.787c0-.142.114-.253.256-.253h1.115c.139 0 .255.112.255.253v10.021c0 1.745-.95 2.745-2.604 2.745-.508 0-.909 0-2.026-.551L1.352 18.675C.533 18.215 0 17.352 0 16.43V6.284c0-.922.533-1.786 1.352-2.245L10.147-.963c.8-.452 1.866-.452 2.657 0l8.796 5.002c.819.459 1.352 1.323 1.352 2.245v10.146c0 .922-.533 1.783-1.352 2.245l-8.796 5.078c-.28.163-.601.247-.926.247zm2.717-6.993c-3.849 0-4.654-1.766-4.654-3.246 0-.14.114-.253.256-.253h1.136c.127 0 .232.091.252.215.173 1.164.686 1.752 3.01 1.752 1.852 0 2.639-.419 2.639-1.401 0-.566-.224-1.03-3.099-1.249-2.404-.184-3.89-.768-3.89-2.689 0-1.771 1.491-2.825 3.991-2.825 2.808 0 4.199.975 4.377 3.068.007.072-.019.141-.065.193-.047.049-.111.077-.178.077h-1.14c-.119 0-.225-.083-.248-.196-.276-1.224-.944-1.616-2.746-1.616-2.023 0-2.259.705-2.259 1.234 0 .641.278.827 3.006 1.19 2.7.359 3.982.866 3.982 2.771 0 1.922-1.603 3.024-4.399 3.024z" fill="#339933"/>
+    </svg>
+);
+
+const TailwindIcon = () => (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+      <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" fill="#06B6D4"/>
+    </svg>
+);
+
+const SkillIcon = memo(({ type }: SkillIconProps) => {
+    switch (type) {
+        case 'html': return <HtmlIcon />;
+        case 'css': return <CssIcon />;
+        case 'javascript': return <JsIcon />;
+        case 'react': return <ReactIcon />;
+        case 'node': return <NodeIcon />;
+        case 'tailwind': return <TailwindIcon />;
+        default: return null;
+    }
+});
+
+SkillIcon.displayName = 'SkillIcon';
+
+// Config array setup nicely around two distinct orbits
+const skillsConfig: SkillConfig[] = [
+    { id: 'html', type: 'html', radius: 140, speed: 0.001, phaseShift: 0 },
+    { id: 'css', type: 'css', radius: 140, speed: 0.001, phaseShift: (2 * Math.PI) / 3 },
+    { id: 'javascript', type: 'javascript', radius: 140, speed: 0.001, phaseShift: (4 * Math.PI) / 3 },
+    
+    { id: 'react', type: 'react', radius: 240, speed: -0.0006, phaseShift: 0 },
+    { id: 'tailwind', type: 'tailwind', radius: 240, speed: -0.0006, phaseShift: (2 * Math.PI) / 3 },
+    { id: 'node', type: 'node', radius: 240, speed: -0.0006, phaseShift: (4 * Math.PI) / 3 },
 ];
 
-export const Languages: React.FC = () => {
-  return (
-    <section id="languages" className="min-h-screen py-20 px-4 sm:px-8">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-4xl font-bold text-white mb-4">Languages</h2>
-          <p className="text-gray-400">
-            Programming languages I've mastered over the years
-          </p>
-        </motion.div>
+const orbitConfigs = [
+    { radius: 140, glowColor: 'cyan' as GlowColor, delay: 0 },
+    { radius: 240, glowColor: 'purple' as GlowColor, delay: 1 },
+];
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {languages.map((language) => (
-            <motion.div
-              key={language.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="bg-[#151030] p-6 rounded-2xl"
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <img 
-                  src={language.icon} 
-                  alt={language.name} 
-                  className="w-10 h-10"
-                />
-                <h3 className="text-xl font-semibold text-white">{language.name}</h3>
-              </div>
-            </motion.div>
-          ))}
+const GlowingOrbitPath = ({ radius, glowColor, animationDelay }: { radius: number, glowColor: GlowColor, animationDelay: number }) => (
+    <div
+        className={`absolute rounded-full border border-white/5 animate-pulse`}
+        style={{
+            width: radius * 2,
+            height: radius * 2,
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)',
+            animationDelay: `${animationDelay}s`,
+            boxShadow: glowColor === 'cyan' 
+                ? 'inset 0 0 30px rgba(6, 182, 212, 0.15)' 
+                : 'inset 0 0 30px rgba(147, 51, 234, 0.15)',
+        }}
+    />
+);
+
+const OrbitingSkill = ({ config, angle }: { config: SkillConfig, angle: number }) => {
+    const x = Math.cos(angle) * config.radius;
+    const y = Math.sin(angle) * config.radius;
+
+    return (
+        <div
+            className="absolute p-3 md:p-4 rounded-full bg-[#18181b] border border-white/10 shadow-xl transition-transform duration-100 ease-linear hover:scale-125 group z-20"
+            style={{
+                left: '50%',
+                top: '50%',
+                transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
+            }}
+        >
+            <div className="w-8 h-8 flex items-center justify-center">
+                <SkillIcon type={config.type} />
+            </div>
         </div>
-      </div>
-    </section>
-  );
+    );
+};
+
+export const Languages: React.FC = () => {
+    const [time, setTime] = useState(0);
+
+    useEffect(() => {
+        let animationFrame: number;
+        
+        const animate = (timestamp: number) => {
+            setTime(timestamp);
+            animationFrame = requestAnimationFrame(animate);
+        };
+
+        animationFrame = requestAnimationFrame(animate);
+        return () => cancelAnimationFrame(animationFrame);
+    }, []);
+
+    return (
+        <section id="languages" className="min-h-screen py-20 px-4 sm:px-8 relative overflow-hidden flex flex-col items-center justify-center"
+                 style={{ 
+                    backgroundColor: '#09090b', 
+                    backgroundImage: 'linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)',
+                    backgroundSize: '32px 32px' 
+                 }}>
+            
+            <div className="w-full max-w-7xl mx-auto z-10">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className="text-center mb-0 md:mb-16 z-30 relative"
+                >
+                    <h2 className="text-4xl font-bold text-white mb-4">Tech Stack</h2>
+                    <p className="text-gray-400"> Technologies I master and use in my daily workflows. </p>
+                </motion.div>
+
+                <div className="relative w-full max-w-3xl aspect-square mx-auto flex items-center justify-center pointer-events-auto">
+                    <div className="relative w-full h-full scale-[0.6] sm:scale-[0.8] md:scale-100 origin-center bg-transparent shrink-0">
+                        {/* Center Logo */}
+                        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 shadow-2xl">
+                            <div className="relative p-8 rounded-full bg-[#1E253D] border border-white/5 border-t-white/10 shadow-[inner_0_0_20px_rgba(0,0,0,0.8)] flex items-center justify-center overflow-hidden">
+                                <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-purple-500/10" />
+                                <svg className="w-12 h-12 text-blue-600 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <defs>
+                                    <linearGradient id="codeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stopColor="#06B6D4" />
+                                        <stop offset="100%" stopColor="#9333EA" />
+                                    </linearGradient>
+                                </defs>
+                                <polyline points="16 18 22 12 16 6" stroke="url(#codeGrad)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                                <polyline points="8 6 2 12 8 18" stroke="url(#codeGrad)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        {orbitConfigs.map((config) => (
+                            <GlowingOrbitPath
+                                key={`path-${config.radius}`}
+                                radius={config.radius}
+                                glowColor={config.glowColor}
+                                animationDelay={config.delay}
+                            />
+                        ))}
+
+                        {skillsConfig.map((config) => {
+                            const angle = time * config.speed + (config.phaseShift || 0);
+                            return (
+                                <OrbitingSkill
+                                    key={config.id}
+                                    config={config}
+                                    angle={angle}
+                                />
+                            );
+                        })}
+                    </div>
+                </div>
+            </div>
+            
+            {/* Fade overlays for the grid edges to blend into the rest of the dark site */}
+            <div className="absolute top-0 left-0 w-full h-32 bg-linear-to-b from-black to-transparent z-0 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-black to-transparent z-0 pointer-events-none" />
+        </section>
+    );
 };

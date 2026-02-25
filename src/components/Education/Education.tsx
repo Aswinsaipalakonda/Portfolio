@@ -49,7 +49,7 @@ export const Education: React.FC = () => {
         </motion.div>
 
         {/* Vertical line for web view */}
-        <div className="hidden md:block absolute left-1/2 top-[20%] bottom-[20%] w-px bg-gradient-to-b from-transparent via-[#915EFF] to-transparent" />
+        <div className="hidden md:block absolute left-1/2 top-[20%] bottom-[20%] w-px bg-linear-to-b from-transparent via-[#915EFF] to-transparent" />
 
         <div className="space-y-12">
           {education.map((edu) => (

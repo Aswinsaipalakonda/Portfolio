@@ -10,7 +10,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   return (
-    <div className="relative min-h-screen bg-black w-full max-w-full overflow-x-hidden">
+    <div className="relative min-h-screen bg-black w-full max-w-full overflow-x-clip">
       <AnimatePresence mode="wait">
         {loading ? (
           <SplashScreen key="splash" onComplete={() => setLoading(false)} />

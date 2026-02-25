@@ -9,7 +9,7 @@ import { Contact } from './Contact/Contact';
 
 export const Content = () => {
   return (
-    <main className="relative z-10 w-full max-w-full overflow-x-hidden">
+    <main className="relative z-10 w-full max-w-full overflow-x-clip">
       <About />
       <Skills />
       <Languages />

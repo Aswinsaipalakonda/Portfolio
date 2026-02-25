@@ -1,30 +1,39 @@
 import { motion } from 'framer-motion';
 import { ProjectCard } from './ProjectCard';
+import StackingCards, { StackingCardItem } from '../fancy/blocks/stacking-cards';
 
 const projects = [
   {
-    title: 'Nexas Digi Solutions',
-    description: 'A digital marketing project focused on providing comprehensive solutions, including portfolio creation, landing pages, SEO optimization, and graphic design.',
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZGlnaXRhbCUyMG1hcmtldGlpbmd8ZW58MHx8MHx8fDA%3D',
-    date: 'Feb 2025',
-    demoLink: 'https://nexas-landing.vercel.app/',
-    githubLink: 'https://github.com/Aswinsaipalakonda/landing-page'
+    title: 'Rainbucks - Digital Product Marketplace',
+    description: 'Developed a digital product marketplace offering Digital Courses with different packages. Implemented admin and client dashboards, purchase management, and product delivery automation.',
+    image: '/assets/rainbucks.png',
+    date: '2025',
+    demoLink: 'https://rainbucks.org',
+    githubLink: 'https://github.com/Aswinsaipalakonda'
   },
   {
-    title: 'MVGR Club Portfolio',
-    description: 'A dynamic portfolio website for MVGR college clubs featuring event showcases, member profiles, and activity timelines.',
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800&h=400',
-    date: 'Nov 2024',
-    demoLink: 'https://aswinsaipalakonda.github.io/club-page/',
-    githubLink: 'https://github.com/Aswinsaipalakonda/club-page'
+    title: 'Clientura - Digital Marketing Agency',
+    description: 'Built a portfolio and client management platform for a digital marketing agency. Included features for client onboarding, project showcases, testimonials, and contact automation.',
+    image: '/assets/clientura.png',
+    date: '2025',
+    demoLink: 'https://clientura.org',
+    githubLink: 'https://github.com/Aswinsaipalakonda'
   },
   {
-    title: 'Tic Tac Toe Game',
-    description: 'A modern implementation of the classic Tic Tac Toe game with beautiful UI animations and multiplayer support.',
-    image: 'https://images.unsplash.com/photo-1667745116154-58101de62e17?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8WCUyME8lMjBYJTIwJTIwZ2FtZXxlbnwwfHwwfHx8MA%3D%3D',
-    date: 'Oct 2024',
-    demoLink: 'https://aswinsaipalakonda.github.io/Tic-Tac-Toe/',
-    githubLink: 'https://github.com/Aswinsaipalakonda/Tic-Tac-Toe'
+    title: 'Overseas - Abroad Consultancy',
+    description: 'Created a Next.js-based consultancy platform helping students connect with overseas universities. Integrated dynamic course listings, inquiry forms, and admin management systems.',
+    image: '/assets/overseas.png',
+    date: '2024',
+    demoLink: 'http://infinitiglobals.com/',
+    githubLink: 'https://github.com/Aswinsaipalakonda'
+  },
+  {
+    title: 'Clientura EMS',
+    description: 'Architected and deployed a custom, end-to-end Employee Management System using PHP and MySQL to centralize workforce data and streamline administrative workflows.',
+    image: '/assets/clientura_ems.png',
+    date: '2025',
+    demoLink: 'https://ems.clientura.org',
+    githubLink: 'https://github.com/Aswinsaipalakonda'
   }
 ];
 
@@ -44,10 +53,19 @@ export const Projects: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
-          ))}
+        <div className="w-full relative mx-auto pb-32">
+          <StackingCards 
+            totalCards={projects.length} 
+            className="w-full relative"
+          >
+            {projects.map((project, index) => (
+              <StackingCardItem key={project.title} index={index} className="h-screen sm:h-[800px] lg:h-[900px] flex items-center justify-center">
+                <div className="w-[95%] lg:w-full max-w-6xl mx-auto h-[600px] sm:h-[450px] lg:h-[550px]">
+                  <ProjectCard {...project} />
+                </div>
+              </StackingCardItem>
+            ))}
+          </StackingCards>
         </div>
       </div>
     </section>
