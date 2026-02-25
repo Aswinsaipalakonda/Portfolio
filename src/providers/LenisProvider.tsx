@@ -1,16 +1,21 @@
-import { useEffect, useRef } from 'react';
-import Lenis from 'lenis';
+import { useEffect, useRef } from "react";
+import Lenis from "lenis";
 
 export const LenisProvider = ({ children }: { children: React.ReactNode }) => {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
+    const isReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (isReducedMotion) {
+      return;
+    }
+
     const lenis = new Lenis({
-      duration: 1.2,                // Shorter duration = snappier, more responsive feel
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Exponential ease out for responsive curve
+      lerp: 0.07, // Smoother and more fluid interpolation
       smoothWheel: true,
-      wheelMultiplier: 1,           // Normal wheel speed so users don't have to crank the scroll wheel
-      touchMultiplier: 2,           // Boost touch for mobile responsiveness
+      wheelMultiplier: 1.2, // Slightly faster scroll so it doesn't feel "hard"
+      touchMultiplier: 2,
       infinite: false,
     });
 

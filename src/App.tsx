@@ -19,7 +19,7 @@ function App() {
             key="main"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
           >
             <Navbar />
             <div className="absolute inset-0 overflow-hidden">
