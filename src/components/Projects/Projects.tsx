@@ -20,10 +20,10 @@ const projects = [
     githubLink: 'https://github.com/Aswinsaipalakonda'
   },
   {
-    title: 'Overseas - Abroad Consultancy',
+    title: 'Infinity Globals - Abroad Consultancy',
     description: 'Created a Next.js-based consultancy platform helping students connect with overseas universities. Integrated dynamic course listings, inquiry forms, and admin management systems.',
-    image: '/assets/overseas.png',
-    date: '2024',
+    image: '/assets/infinity.png',
+    date: '2025',
     demoLink: 'http://infinitiglobals.com/',
     githubLink: 'https://github.com/Aswinsaipalakonda'
   },
@@ -34,7 +34,31 @@ const projects = [
     date: '2025',
     demoLink: 'https://ems.clientura.org',
     githubLink: 'https://github.com/Aswinsaipalakonda'
-  }
+  },
+  {
+  title: 'Homessy Platform',
+  description: 'Designed and developed a scalable multi-service platform integrating grocery delivery and home services using WordPress, Elementor, and Supabase. Implemented dynamic product management, service booking workflows, and optimized SEO structure for hyperlocal market expansion.',
+  image: '/assets/homessy.png',
+  date: '2025',
+  demoLink: 'https://homessy.com',
+  githubLink: 'https://github.com/Aswinsaipalakonda'
+  },
+  {
+  title: 'Grama Voice Platform',
+  description: 'Built a community-driven digital platform to amplify rural voices and local governance transparency. Developed structured content modules, user interaction flows, and scalable backend integration to support public engagement and information accessibility.',
+  image: '/assets/grama_voice.png',
+  date: '2025',
+  demoLink: 'https://gramavoice.clientura.org',
+  githubLink: 'https://github.com/Aswinsaipalakonda'
+  },
+  {
+  title: 'Right Overseas Solutions',
+  description: 'Designed and developed a high-conversion overseas education and immigration consultancy website with structured service architecture, country-specific landing flows, and optimized lead capture system. Focused on credibility positioning, consultation booking funnels, and trust-driven UI design.',
+  image: '/assets/overseas.png',
+  date: '2025',
+  demoLink: 'https://rightoverseassolutions.com',
+  githubLink: 'https://github.com/Aswinsaipalakonda'
+  },
 ];
 
 export const Projects: React.FC = () => {

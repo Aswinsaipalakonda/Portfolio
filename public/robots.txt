@@ -1,14 +1,4 @@
-# robots.txt for aswinsai.tech
 User-agent: *
 Allow: /
 
-# Sitemap
 Sitemap: https://aswinsai.tech/sitemap.xml
-
-# Google Bot
-User-agent: Googlebot
-Allow: /
-
-# Bing Bot
-User-agent: Bingbot
-Allow: /

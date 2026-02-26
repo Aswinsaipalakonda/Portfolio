@@ -2,6 +2,7 @@
 import { About } from './About';
 import { Skills } from './Skills/Skills';
 import { Languages } from './Languages';
+import { Experience } from './Experience/Experience';
 import { Projects } from './Projects/Projects';
 import { Certificates } from './Certificates/Certificates';
 import { Education } from './Education/Education';
@@ -13,6 +14,7 @@ export const Content = () => {
       <About />
       <Skills />
       <Languages />
+      <Experience />
       <Projects />
       <Certificates />
       <Education />
