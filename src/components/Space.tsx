@@ -19,7 +19,7 @@ export const Space = () => {
         ref={starsRef}
         radius={100}
         depth={50}
-        count={10000}
+        count={4000}
         factor={4}
         saturation={0}
         fade

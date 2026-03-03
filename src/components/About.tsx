@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { FlipWords } from "@/components/ui/flip-words";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
@@ -8,13 +9,6 @@ export const About = () => {
     'No-Code Developer',
     'AI Enthusiast'
   ];
-
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section id="about" className="min-h-screen pt-24 sm:pt-28 md:pt-32 flex items-center justify-center px-4 sm:px-6 lg:px-8">
@@ -66,23 +60,28 @@ export const About = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
           >
-            <motion.button
-              onClick={scrollToContact}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 rounded-full bg-linear-to-r from-[#915EFF] to-purple-600 text-white font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+            <Link
+              to="/contact"
+              className="px-8 py-3 rounded-full bg-linear-to-r from-[#915EFF] to-purple-600 text-white font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105 flex items-center justify-center text-center"
             >
               Hire Me
-            </motion.button>
+            </Link>
             <motion.a
-              href="https://github.com/Aswinsaipalakonda"
+              href="/resume.html"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 rounded-full border-2 border-[#915EFF] text-[#915EFF] font-medium hover:bg-[#915EFF]/10 transition-all duration-300"
+              className="px-8 py-3 rounded-full border-2 border-[#915EFF] text-[#915EFF] font-medium hover:bg-[#915EFF]/10 transition-all duration-300 flex items-center justify-center text-center gap-2"
             >
-              View GitHub
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              Resume
             </motion.a>
           </motion.div>
         </motion.div>

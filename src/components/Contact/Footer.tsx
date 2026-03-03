@@ -1,47 +1,52 @@
-
-import { Linkedin, Instagram } from 'lucide-react';
+import { Linkedin, Instagram, Github } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <footer className="mt-20 pb-8 text-center">
-      <nav className="mb-6">
-        <ul className="flex justify-center gap-8 text-gray-400">
+    <footer className="mt-20 pb-10 text-center border-t border-white/5 pt-10">
+      <div className="flex justify-center gap-8 mb-8">
+        <a 
+          href="https://github.com/Aswinsaipalakonda" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="p-3 bg-white/5 rounded-full text-gray-400 hover:text-[#915EFF] hover:bg-white/10 transition-all transform hover:scale-110"
+        >
+          <Github className="w-6 h-6" />
+        </a>
+        <a 
+          href="https://linkedin.com/in/aswinsaipalakonda/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="p-3 bg-white/5 rounded-full text-gray-400 hover:text-[#915EFF] hover:bg-white/10 transition-all transform hover:scale-110"
+        >
+          <Linkedin className="w-6 h-6" />
+        </a>
+        <a 
+          href="https://www.instagram.com/__itz_aswin" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="p-3 bg-white/5 rounded-full text-gray-400 hover:text-[#915EFF] hover:bg-white/10 transition-all transform hover:scale-110"
+        >
+          <Instagram className="w-6 h-6" />
+        </a>
+      </div>
+
+      <nav className="mb-8">
+        <ul className="flex justify-center flex-wrap gap-x-8 gap-y-4 text-gray-400 font-medium">
           <li>
-            <button onClick={() => scrollToSection('about')} className="hover:text-white transition-colors">
-              About
-            </button>
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
           </li>
           <li>
-            <button onClick={() => scrollToSection('skills')} className="hover:text-white transition-colors">
-              Skills
-            </button>
+            <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
           </li>
           <li>
-            <button onClick={() => scrollToSection('projects')} className="hover:text-white transition-colors">
-              Projects
-            </button>
+            <a href="https://github.com/Aswinsaipalakonda" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Github</a>
           </li>
         </ul>
       </nav>
       
-      <div className="flex justify-center gap-6 mb-6">
-      <a href="https://www.instagram.com/__itz_aswin" className="text-gray-400 hover:text-white transition-colors">
-          <Instagram className="w-8 h-8" />
-        </a>
-        <a href="https://www.linkedin.com/in/aswinsaipalakonda/" className="text-gray-400 hover:text-white transition-colors">
-          <Linkedin className="w-8 h-8" />
-        </a>
-      </div>
-      
-      <p className="text-gray-400 text-sm">
-        © {new Date().getFullYear()} Aswinsai. All rights reserved.
+      <p className="text-gray-500 text-sm">
+        © {new Date().getFullYear()} Aswinsai Palakonda. All rights reserved.
       </p>
     </footer>
   );
