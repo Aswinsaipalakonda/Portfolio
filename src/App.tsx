@@ -1,10 +1,12 @@
-import { useState, Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
+import { useState, Suspense, lazy } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Navbar } from './components/Navbar';
-import { Space } from './components/Space';
 import { Content } from './components/Content';
 import { SplashScreen } from './components/SplashScreen';
+
+// Super-charge Mobile PageSpeed by deferring heavy WebGL/ThreeJS chunks
+const Canvas = lazy(() => import('@react-three/fiber').then(module => ({ default: module.Canvas })));
+const Space = lazy(() => import('./components/Space').then(module => ({ default: module.Space })));
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -22,12 +24,14 @@ function App() {
             transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
           >
             <Navbar />
-            <div className="absolute inset-0 overflow-hidden">
-              <Canvas>
-                <Suspense fallback={null}>
-                  <Space />
-                </Suspense>
-              </Canvas>
+            <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+              <Suspense fallback={null}>
+                <Canvas dpr={[1, 1.5]} gl={{ powerPreference: "high-performance", antialias: false, alpha: false }}>
+                  <Suspense fallback={null}>
+                    <Space />
+                  </Suspense>
+                </Canvas>
+              </Suspense>
             </div>
             <Content />
           </motion.div>

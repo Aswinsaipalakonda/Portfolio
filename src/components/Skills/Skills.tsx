@@ -4,14 +4,14 @@ import { SkillCard } from './SkillCard';
 import { SoftSkills } from './SoftSkills';
 
 const technicalSkills = {
-  Frontend: [
+  Frontend : [
     { name: 'React.js', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg' },
     { name: 'HTML', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg' },
     { name: 'CSS', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg' },
     { name: 'JavaScript', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg' },
     { name: 'Bootstrap', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png' },
-    { name: 'Three.js', icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhUyPLMCrdBvL7byu5KkMnOssbQigrkiRxZw&s' },
-    { name: 'Flutter', icon: 'https://storage.googleapis.com/cms-storage-bucket/4fd0db61df0567c0f352.png' }
+    { name: 'React Native', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg' },
+    { name: 'Expo', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/expo/expo-original.svg' }
   ],
   Backend: [
     { name: 'Python', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg' },
