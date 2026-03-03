@@ -1,7 +1,9 @@
 import { useState, Suspense, lazy } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Content } from './components/Content';
+import { Contact } from './components/Contact/Contact';
 import { SplashScreen } from './components/SplashScreen';
 
 // Super-charge Mobile PageSpeed by deferring heavy WebGL/ThreeJS chunks
@@ -33,7 +35,10 @@ function App() {
                 </Canvas>
               </Suspense>
             </div>
-            <Content />
+            <Routes>
+              <Route path="/" element={<Content />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
           </motion.div>
         )}
       </AnimatePresence>

@@ -6,7 +6,7 @@ import { Experience } from './Experience/Experience';
 import { Projects } from './Projects/Projects';
 import { Certificates } from './Certificates/Certificates';
 import { Education } from './Education/Education';
-import { Contact } from './Contact/Contact';
+import { Footer } from './Contact/Footer';
 
 export const Content = () => {
   return (
@@ -18,7 +18,7 @@ export const Content = () => {
       <Projects />
       <Certificates />
       <Education />
-      <Contact />
+      <Footer />
     </main>
   );
 };
