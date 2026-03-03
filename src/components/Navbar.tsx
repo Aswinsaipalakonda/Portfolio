@@ -1,27 +1,14 @@
 import { useState, type ReactNode } from 'react';
 import { Menu, X } from 'lucide-react';
-import { useLocation, useNavigate, Link } from 'react-router-dom';
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
 
-  const handleNavClick = (id: string) => {
-    setIsMenuOpen(false);
-    if (location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
     }
   };
 
@@ -29,9 +16,9 @@ export const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm w-full">
       <div className="w-full max-w-7xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-white text-xl font-bold">
+          <a href="/" className="text-white text-xl font-bold">
             Aswinsai
-          </Link>
+          </a>
           
           {/* Mobile menu button */}
           <button
@@ -44,19 +31,12 @@ export const Navbar = () => {
 
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <NavLink onClick={() => handleNavClick('about')}>About</NavLink>
-            <NavLink onClick={() => handleNavClick('skills')}>Skills</NavLink>
-            <NavLink onClick={() => handleNavClick('languages')}>Languages</NavLink>
-            <NavLink onClick={() => handleNavClick('projects')}>Projects</NavLink>
-            <NavLink onClick={() => handleNavClick('certificates')}>Certificates</NavLink>
-            <NavLink onClick={() => handleNavClick('education')}>Education</NavLink>
-            
-            <Link 
-              to="/contact" 
-              className="px-4 py-2 rounded-full bg-blue-600/10 text-blue-400 border border-blue-500/30 hover:bg-blue-600/20 hover:text-white hover:border-blue-400 transition-colors"
-            >
-              Contact Me
-            </Link>
+            <NavLink onClick={() => scrollToSection('about')}>About</NavLink>
+            <NavLink onClick={() => scrollToSection('skills')}>Skills</NavLink>
+            <NavLink onClick={() => scrollToSection('languages')}>Languages</NavLink>
+            <NavLink onClick={() => scrollToSection('projects')}>Projects</NavLink>
+            <NavLink onClick={() => scrollToSection('certificates')}>Certificates</NavLink>
+            <NavLink onClick={() => scrollToSection('education')}>Education</NavLink>
             
             <a 
               href="https://github.com/Aswinsaipalakonda" 
@@ -78,20 +58,12 @@ export const Navbar = () => {
           }`}
         >
           <div className="pt-4 pb-3 space-y-2">
-            <NavLink onClick={() => handleNavClick('about')}>About</NavLink>
-            <NavLink onClick={() => handleNavClick('skills')}>Skills</NavLink>
-            <NavLink onClick={() => handleNavClick('languages')}>Languages</NavLink>
-            <NavLink onClick={() => handleNavClick('projects')}>Projects</NavLink>
-            <NavLink onClick={() => handleNavClick('education')}>Education</NavLink>
+            <NavLink onClick={() => scrollToSection('about')}>About</NavLink>
+            <NavLink onClick={() => scrollToSection('skills')}>Skills</NavLink>
+            <NavLink onClick={() => scrollToSection('languages')}>Languages</NavLink>
+            <NavLink onClick={() => scrollToSection('projects')}>Projects</NavLink>
+            <NavLink onClick={() => scrollToSection('education')}>Education</NavLink>
             
-            <Link 
-              to="/contact" 
-              onClick={() => setIsMenuOpen(false)}
-              className="block px-4 py-2 text-center rounded-full bg-blue-600/10 text-blue-400 border border-blue-500/30 hover:bg-blue-600/20 hover:text-white hover:border-blue-400 transition-colors"
-            >
-              Contact Me
-            </Link>
-
             <a 
               href="https://github.com/Aswinsaipalakonda" 
               target="_blank" 
