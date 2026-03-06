@@ -182,8 +182,8 @@ npm run preview   # Preview the production build
 | 👤  | **About**         | Hero with profile photo, gradient name, and flip word roles      |
 | 🛠️  | **Skills**        | Categorized technical skills (Frontend, Backend, DevOps, Others) |
 | 💻  | **Languages**     | Programming languages proficiency                                |
-|  �  | **Experience**    | Professional work experience                                     |
-| �📁 | **Projects**      | Showcased projects with live demo & GitHub links                 |
+| 💼  | **Experience**    | Professional work experience                                     |
+| 📁  | **Projects**      | Showcased projects with live demo & GitHub links                 |
 | 🏅  | **Certificates**  | Achievements gallery with full-view modal                        |
 | 🎓  | **Education**     | Academic timeline with school details & CTA                      |
 | 📬  | **Contact**       | Dedicated page with email form + 3D globe + social links         |
