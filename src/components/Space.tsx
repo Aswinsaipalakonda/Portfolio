@@ -3,7 +3,11 @@ import { Stars } from '@react-three/drei';
 import { useRef } from 'react';
 import * as THREE from 'three';
 
-export const Space = () => {
+interface SpaceProps {
+  starCount?: number;
+}
+
+export const Space = ({ starCount = 4000 }: SpaceProps) => {
   const starsRef = useRef<THREE.Points>(null);
 
   useFrame(() => {
@@ -19,7 +23,7 @@ export const Space = () => {
         ref={starsRef}
         radius={100}
         depth={50}
-        count={4000}
+        count={starCount}
         factor={4}
         saturation={0}
         fade
