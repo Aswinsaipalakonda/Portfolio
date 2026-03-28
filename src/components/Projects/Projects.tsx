@@ -9,7 +9,7 @@ const projects = [
     image: '/assets/rainbucks.png',
     date: '2025',
     demoLink: 'https://rainbucks.org',
-    githubLink: 'https://github.com/Aswinsaipalakonda'
+    techStack: ['Next.js', 'Tailwind CSS', 'Supabase', 'Stripe']
   },
   {
     title: 'Clientura - Digital Marketing Agency',
@@ -17,7 +17,7 @@ const projects = [
     image: '/assets/clientura.png',
     date: '2025',
     demoLink: 'https://clientura.org',
-    githubLink: 'https://github.com/Aswinsaipalakonda'
+    techStack: ['React', 'Framer Motion', 'Tailwind CSS']
   },
   {
     title: 'Infinity Globals - Abroad Consultancy',
@@ -25,7 +25,7 @@ const projects = [
     image: '/assets/infinity.png',
     date: '2025',
     demoLink: 'http://infinitiglobals.com/',
-    githubLink: 'https://github.com/Aswinsaipalakonda'
+    techStack: ['Next.js', 'App Router', 'TypeScript', 'Prisma']
   },
   {
     title: 'Clientura EMS',
@@ -33,7 +33,7 @@ const projects = [
     image: '/assets/clientura_ems.png',
     date: '2025',
     demoLink: 'https://ems.clientura.org',
-    githubLink: 'https://github.com/Aswinsaipalakonda'
+    techStack: ['PHP', 'MySQL', 'Bootstrap', 'JavaScript']
   },
   {
   title: 'Homessy Platform',
@@ -41,7 +41,7 @@ const projects = [
   image: '/assets/homessy.png',
   date: '2025',
   demoLink: 'https://homessy.com',
-  githubLink: 'https://github.com/Aswinsaipalakonda'
+  techStack: ['WordPress', 'Supabase', 'Elementor', 'SEO']
   },
   {
   title: 'Grama Voice Platform',
@@ -49,7 +49,7 @@ const projects = [
   image: '/assets/grama_voice.png',
   date: '2025',
   demoLink: 'https://gramavoice.clientura.org',
-  githubLink: 'https://github.com/Aswinsaipalakonda'
+  techStack: ['React', 'Node.js', 'MongoDB', 'Express']
   },
   {
   title: 'Right Overseas Solutions',
@@ -57,7 +57,7 @@ const projects = [
   image: '/assets/overseas.png',
   date: '2025',
   demoLink: 'https://rightoverseassolutions.com',
-  githubLink: 'https://github.com/Aswinsaipalakonda'
+  techStack: ['Next.js', 'Motion', 'Tailwind CSS', 'LeadGen']
   },
 ];
 
@@ -77,7 +77,7 @@ export const Projects: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="w-full relative mx-auto pb-32">
+        <div className="w-full relative mx-auto pb-60">
           <StackingCards 
             totalCards={projects.length} 
             className="w-full relative"

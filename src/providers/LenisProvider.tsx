@@ -1,5 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, createContext, useContext } from "react";
 import Lenis from "lenis";
+
+const LenisContext = createContext<{ lenis: Lenis | null }>({ lenis: null });
+
+export const useLenisContext = () => useContext(LenisContext);
 
 export const LenisProvider = ({ children }: { children: React.ReactNode }) => {
   const lenisRef = useRef<Lenis | null>(null);
@@ -12,31 +16,44 @@ export const LenisProvider = ({ children }: { children: React.ReactNode }) => {
     }
 
     const lenis = new Lenis({
-      lerp: 0.07, // Smoother and more fluid interpolation
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1.2, // Slightly faster scroll so it doesn't feel "hard"
+      wheelMultiplier: 1.1,
       touchMultiplier: 2,
+      syncTouch: true, // Crucial for mobile smoothness
       infinite: false,
     });
 
     lenisRef.current = lenis;
 
     let rafId: number;
-
     function raf(time: number) {
-      if (lenisRef.current === lenis) {
-        lenis.raf(time);
-        rafId = requestAnimationFrame(raf);
-      }
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
     }
 
     rafId = requestAnimationFrame(raf);
 
+    // Sync with Framer Motion and other libraries
+    const handleResize = () => {
+      lenis.resize();
+    };
+    window.addEventListener('resize', handleResize);
+
     return () => {
       cancelAnimationFrame(rafId);
+      window.removeEventListener('resize', handleResize);
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
 
-  return <>{children}</>;
+  return (
+    <LenisContext.Provider value={{ lenis: lenisRef.current }}>
+      {children}
+    </LenisContext.Provider>
+  );
 };
