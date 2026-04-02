@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ExternalLink, Code2 } from "lucide-react";
 
 interface ProjectCardProps {
@@ -38,59 +39,95 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   demoLink,
   techStack,
 }) => {
+  const [isTapped, setIsTapped] = useState(false);
+
   return (
-    <div className="bg-[#151030] rounded-3xl overflow-hidden h-full w-full border border-white/10 shadow-2xl flex flex-col md:flex-row-reverse group/card transition-all duration-500 hover:shadow-[#915EFF]/10">
-      <div className="relative group shrink-0 w-full md:w-[60%] h-1/2 md:h-full overflow-hidden">
+    <div 
+      className="bg-[#151030] rounded-3xl overflow-hidden h-fit w-full border border-white/10 shadow-2xl flex flex-col md:flex-row-reverse group/card transition-all duration-500 hover:shadow-[#915EFF]/10 relative"
+      onClick={() => setIsTapped(!isTapped)}
+    >
+      {/* Mobile-Only Tap Overlay Link on Image */}
+      <div className="relative group shrink-0 w-full md:w-[60%] h-[240px] md:h-[480px] overflow-hidden bg-black/40">
         <div className="absolute inset-0 bg-linear-to-t from-[#151030] via-transparent to-transparent z-10 opacity-60 pointer-events-none md:hidden" />
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          loading="lazy"
+          className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
         />
+        
+        {/* Mobile Tap-to-Reveal Link Overlay */}
+        <div 
+          className={`absolute inset-0 z-20 flex items-center justify-center bg-black/60 backdrop-blur-[2px] transition-all duration-300 md:hidden ${
+            isTapped ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
+        >
+          {demoLink && demoLink !== "#" && (
+            <a
+              href={demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex items-center gap-3 px-6 py-3 bg-[#915EFF] text-white rounded-full font-bold shadow-2xl animate-in zoom-in-75 duration-300"
+            >
+              <ExternalLink size={18} />
+              <span className="text-sm">Visit Project</span>
+            </a>
+          )}
+        </div>
+        
+        {/* Hint to tap (Visible when NOT tapped on mobile) */}
+        {!isTapped && demoLink && demoLink !== "#" && (
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 md:hidden bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-[10px] text-gray-300 font-medium animate-pulse">
+            Tap to view link
+          </div>
+        )}
       </div>
 
-      <div className="p-6 md:p-8 lg:p-12 flex-1 flex flex-col justify-center relative overflow-hidden">
+      <div className="p-6 md:p-8 lg:p-12 flex-1 flex flex-col justify-center relative overflow-hidden h-fit self-center">
         {/* Subtle Decorative Gradient */}
         <div className="absolute -top-24 -left-24 w-64 h-64 bg-[#915EFF]/10 blur-[100px] rounded-full pointer-events-none" />
 
-        <div className="relative z-10">
-          <p className="text-sm text-[#915EFF] font-bold mb-2 tracking-widest">{date}</p>
-          <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-4 leading-tight group-hover/card:text-[#915EFF] transition-colors duration-300">
+        <div className="relative z-10 flex flex-col">
+          <p className="text-[10px] text-[#915EFF] font-bold mb-1 tracking-widest uppercase">{date}</p>
+          <h1 className="text-xl md:text-3xl font-extrabold text-white mb-2 leading-tight group-hover/card:text-[#915EFF] transition-colors duration-300">
             {title}
-          </h3>
-          <p className="text-gray-400 text-sm md:text-base line-clamp-4 md:line-clamp-6 leading-relaxed mb-8 font-medium">
+          </h1>
+          <p className="text-gray-400 text-xs md:text-base line-clamp-2 md:line-clamp-3 mb-4 leading-relaxed font-medium">
             {description}
           </p>
           
-          <div className="flex flex-col sm:flex-row sm:items-center gap-6 mt-auto">
+          <div className="flex items-center gap-2.5 mt-4 sm:mt-6 pt-4 flex-wrap whitespace-nowrap">
+            {/* Show link at bottom only on desktop */}
             {demoLink && demoLink !== "#" && (
               <a
                 href={demoLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-12 h-12 bg-white/5 border border-white/10 rounded-2xl hover:bg-[#915EFF] hover:border-[#915EFF] transition-all duration-300 text-gray-300 hover:text-white shrink-0 group/btn shadow-xl"
+                onClick={(e) => e.stopPropagation()}
+                className="hidden md:flex items-center justify-center w-11 h-11 bg-white/5 border border-white/10 rounded-2xl hover:bg-[#915EFF] hover:border-[#915EFF] transition-all duration-300 text-gray-300 hover:text-white shrink-0 group/btn shadow-xl active:scale-95"
                 title="View Live Project"
               >
                 <ExternalLink className="w-5 h-5 transition-transform group-hover/btn:scale-110" />
               </a>
             )}
             
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2">
               {techStack.map((tech) => {
                 const config = techConfig[tech] || { color: "#FFFFFF" };
                 return (
                   <span 
                     key={tech} 
-                    className="flex items-center gap-2 px-3 py-1.5 rounded-xl text-[10px] md:text-xs font-bold text-white/90 border border-white/5 bg-white/5 transition-all duration-300 hover:border-[#915EFF]/50 hover:bg-white/10 hover:-translate-y-1 shadow-lg backdrop-blur-sm"
+                    className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-[9px] md:text-[11px] font-bold text-white/90 border border-white/10 bg-white/5 transition-all duration-300 hover:border-[#915EFF]/50 hover:bg-white/10 shadow-lg backdrop-blur-sm"
                   >
                     {config.icon ? (
                       <img 
                         src={`https://cdn.simpleicons.org/${config.icon}/${config.color.replace('#', '')}`} 
                         alt={tech}
-                        className="w-3.5 h-3.5 object-contain"
+                        className="w-3 h-3 object-contain"
                       />
                     ) : (
-                      <Code2 className="w-3.5 h-3.5 text-[#915EFF]" />
+                      <Code2 className="w-3 h-3 text-[#915EFF]" />
                     )}
                     {tech}
                   </span>

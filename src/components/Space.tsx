@@ -7,7 +7,7 @@ interface SpaceProps {
   starCount?: number;
 }
 
-export const Space = ({ starCount = 4000 }: SpaceProps) => {
+export const Space = ({ starCount = 2000 }: SpaceProps) => {
   const starsRef = useRef<THREE.Points>(null);
 
   useFrame(() => {

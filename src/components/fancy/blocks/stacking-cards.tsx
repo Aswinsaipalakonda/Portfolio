@@ -76,8 +76,8 @@ const StackingCardItem = ({
   return (
     <div className={cn("sticky top-0", className)} {...props}>
       <motion.div
-        className={"origin-top relative h-full"}
-        style={{ top, scale }}
+        className={"origin-top relative h-full transition-shadow duration-300"}
+        style={{ top, scale, willChange: "transform, scale" }}
       >
         {children}
       </motion.div>

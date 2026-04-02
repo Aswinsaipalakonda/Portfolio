@@ -83,8 +83,8 @@ export const Projects: React.FC = () => {
             className="w-full relative"
           >
             {projects.map((project, index) => (
-              <StackingCardItem key={project.title} index={index} className="h-screen sm:h-[800px] lg:h-[900px] flex items-center justify-center">
-                <div className="w-[95%] lg:w-full max-w-6xl mx-auto h-[600px] sm:h-[450px] lg:h-[550px]">
+              <StackingCardItem key={project.title} index={index} className="h-screen sm:h-[800px] lg:h-[900px] flex items-start justify-center pt-20">
+                <div className="w-[95%] lg:w-full max-w-6xl mx-auto h-fit">
                   <ProjectCard {...project} />
                 </div>
               </StackingCardItem>

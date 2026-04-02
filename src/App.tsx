@@ -38,7 +38,7 @@ function AppContent() {
               <Suspense fallback={null}>
                 <Canvas dpr={[1, 1.5]} gl={{ powerPreference: "high-performance", antialias: false, alpha: false }}>
                   <Suspense fallback={null}>
-                    <Space starCount={is404 ? 300 : 4000} />
+                    <Space starCount={is404 ? 200 : (location.pathname === '/contact' ? 400 : 1000)} />
                   </Suspense>
                 </Canvas>
               </Suspense>

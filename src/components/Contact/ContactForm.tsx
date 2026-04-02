@@ -65,20 +65,20 @@ export const ContactForm = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md mx-auto space-y-6">
         <div className="space-y-4">
           <div className="relative">
-            <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#915EFF]/50" />
+            <User className="absolute left-3 top-4.5 w-5 h-5 text-[#915EFF]/50" />
             <input
               {...register('user_name', { required: 'Name is required' })}
               type="text"
               placeholder="Your Name"
-              className={`w-full pl-10 pr-4 py-3 bg-[#151030] rounded-lg border ${
-                errors.user_name ? 'border-red-500' : 'border-[#915EFF]/20'
+              className={`w-full pl-10 pr-4 py-3 bg-[#151030] rounded-lg border-2 ${
+                errors.user_name ? 'border-red-500 animate-shake' : 'border-[#915EFF]/20 shadow-inner'
               } focus:border-[#915EFF] text-white outline-hidden transition-all`}
             />
-            {errors.user_name && <p className="text-red-500 text-xs mt-1">{errors.user_name.message}</p>}
+            {errors.user_name && <p className="text-red-500 text-[10px] font-bold mt-1 uppercase tracking-wider">{errors.user_name.message}</p>}
           </div>
 
           <div className="relative">
-            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#915EFF]/50" />
+            <Mail className="absolute left-3 top-4.5 w-5 h-5 text-[#915EFF]/50" />
             <input
               {...register('user_email', { 
                 required: 'Email is required',
@@ -89,24 +89,24 @@ export const ContactForm = () => {
               })}
               type="email"
               placeholder="Your Email"
-              className={`w-full pl-10 pr-4 py-3 bg-[#151030] rounded-lg border ${
-                errors.user_email ? 'border-red-500' : 'border-[#915EFF]/20'
+              className={`w-full pl-10 pr-4 py-3 bg-[#151030] rounded-lg border-2 ${
+                errors.user_email ? 'border-red-500 animate-shake' : 'border-[#915EFF]/20 shadow-inner'
               } focus:border-[#915EFF] text-white outline-hidden transition-all`}
             />
-            {errors.user_email && <p className="text-red-500 text-xs mt-1">{errors.user_email.message}</p>}
+            {errors.user_email && <p className="text-red-500 text-[10px] font-bold mt-1 uppercase tracking-wider">{errors.user_email.message}</p>}
           </div>
 
           <div className="relative">
-            <Tag className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#915EFF]/50" />
+            <Tag className="absolute left-3 top-4.5 w-5 h-5 text-[#915EFF]/50" />
             <input
               {...register('subject', { required: 'Subject is required' })}
               type="text"
               placeholder="Subject"
-              className={`w-full pl-10 pr-4 py-3 bg-[#151030] rounded-lg border ${
-                errors.subject ? 'border-red-500' : 'border-[#915EFF]/20'
+              className={`w-full pl-10 pr-4 py-3 bg-[#151030] rounded-lg border-2 ${
+                errors.subject ? 'border-red-500 animate-shake' : 'border-[#915EFF]/20 shadow-inner'
               } focus:border-[#915EFF] text-white outline-hidden transition-all`}
             />
-            {errors.subject && <p className="text-red-500 text-xs mt-1">{errors.subject.message}</p>}
+            {errors.subject && <p className="text-red-500 text-[10px] font-bold mt-1 uppercase tracking-wider">{errors.subject.message}</p>}
           </div>
 
           <div className="relative">
@@ -115,11 +115,11 @@ export const ContactForm = () => {
               {...register('message', { required: 'Message is required' })}
               placeholder="Your Message"
               rows={4}
-              className={`w-full pl-10 pr-4 py-3 bg-[#151030] rounded-lg border ${
-                errors.message ? 'border-red-500' : 'border-[#915EFF]/20'
+              className={`w-full pl-10 pr-4 py-3 bg-[#151030] rounded-lg border-2 ${
+                errors.message ? 'border-red-500 animate-shake' : 'border-[#915EFF]/20 shadow-inner'
               } focus:border-[#915EFF] text-white outline-hidden resize-none transition-all`}
             />
-            {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
+            {errors.message && <p className="text-red-500 text-[10px] font-bold mt-1 uppercase tracking-wider">{errors.message.message}</p>}
           </div>
         </div>
 

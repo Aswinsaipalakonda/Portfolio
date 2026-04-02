@@ -88,7 +88,7 @@ export const Experience = () => {
   }, [cursorX, cursorY, rotateX, rotateY]);
 
   return (
-    <section ref={targetRef} className="relative h-[500vh] bg-black">
+    <section id="experience" ref={targetRef} className="relative h-[500vh] bg-black">
       
       {/* Custom Cursor Preview */}
       <motion.div
@@ -154,23 +154,22 @@ export const Experience = () => {
 
                 <div className="flex flex-col items-center text-center w-full relative z-10">
                   
+                  {/* Mobile Preview (Inline) - Moved to top for attraction */}
+                  <div className="md:hidden w-24 h-24 mb-6 rounded-2xl overflow-hidden border border-gray-800 shadow-xl bg-black">
+                     <img src={exp.image} alt={exp.title} className="w-full h-full object-cover" />
+                  </div>
+
                   {/* Date Badge */}
-                  <div className="px-4 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-bold text-[10px] md:text-xs mb-6 tracking-widest uppercase">
+                  <div className="px-4 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-bold text-[10px] md:text-xs mb-4 tracking-widest uppercase">
                     {exp.date}
                   </div>
                   
                   <h3 className="text-2xl md:text-4xl font-bold text-white mb-2">{exp.title}</h3>
-                  <h4 className="text-sm md:text-lg text-gray-400 font-bold mb-6 tracking-widest uppercase">{exp.company}</h4>
+                  <h4 className="text-xs md:text-lg text-gray-400 font-bold mb-6 tracking-widest uppercase">{exp.company}</h4>
                   
                   <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-lg">
                     {exp.description}
                   </p>
-
-                  {/* Mobile Preview (Inline) */}
-                  <div className="md:hidden w-20 h-20 mt-8 rounded-2xl overflow-hidden border border-gray-800 shadow-lg bg-black">
-                     <img src={exp.image} alt={exp.title} className="w-full h-full object-cover" />
-                  </div>
-
                 </div>
 
               </motion.div>
