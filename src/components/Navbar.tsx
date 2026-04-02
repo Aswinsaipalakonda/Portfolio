@@ -82,8 +82,7 @@ export const Navbar = () => {
   const smoothNavPaddingY = useSpring(navPaddingY, springConfig);
 
   const navLinks = [
-    { name: 'Home', path: 'hero', icon: <Home className="w-4 h-4" /> },
-    { name: 'About', path: 'about', icon: <User className="w-4 h-4" /> },
+    { name: 'About', path: 'hero', icon: <User className="w-4 h-4" /> },
     { name: 'Experience', path: 'experience', icon: <Briefcase className="w-4 h-4" /> },
     { name: 'Projects', path: 'projects', icon: <Code2 className="w-4 h-4" /> },
   ];
@@ -155,7 +154,7 @@ export const Navbar = () => {
           </button>
         </div>
 
-        <div className="hidden md:flex items-center justify-between w-full">
+        <div className="hidden md:flex items-center justify-between w-full gap-8">
           <Link 
             to="/" 
             onClick={(e) => {
@@ -167,7 +166,7 @@ export const Navbar = () => {
             Aswinsai<span className="text-[#915EFF]">.</span>
           </Link>
           
-          <div className="flex items-center justify-center flex-1 gap-1">
+          <div className="flex items-center gap-1">
             {navLinks.map((link) => {
               const isActive = activeSection === link.path && location.pathname === '/';
               return (
