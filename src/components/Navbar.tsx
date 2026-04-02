@@ -61,7 +61,7 @@ export const Navbar = () => {
   const springConfig = { stiffness: 100, damping: 30, mass: 1 };
   
   const headerPadding = useTransform(scrollY, scrollRange, ['16px', '8px']);
-  const navMaxWidthTransition = useTransform(scrollY, scrollRange, ['1400px', '800px']);
+  const navMaxWidthTransition = useTransform(scrollY, scrollRange, ['1000px', '780px']);
   
   const navBg = useTransform(scrollY, scrollRange, [
     isMobile ? 'rgba(10, 10, 10, 0.95)' : 'rgba(10, 10, 10, 0)', 
@@ -154,7 +154,7 @@ export const Navbar = () => {
           </button>
         </div>
 
-        <div className="hidden md:flex items-center justify-between w-full gap-8">
+        <div className="hidden md:flex items-center justify-between w-full gap-4">
           <Link 
             to="/" 
             onClick={(e) => {
@@ -166,7 +166,7 @@ export const Navbar = () => {
             Aswinsai<span className="text-[#915EFF]">.</span>
           </Link>
           
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-4">
             {navLinks.map((link) => {
               const isActive = activeSection === link.path && location.pathname === '/';
               return (
