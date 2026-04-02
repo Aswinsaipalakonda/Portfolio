@@ -105,7 +105,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="hidden md:flex items-center justify-center w-11 h-11 bg-white/5 border border-white/10 rounded-2xl hover:bg-[#915EFF] hover:border-[#915EFF] transition-all duration-300 text-gray-300 hover:text-white shrink-0 group/btn shadow-xl active:scale-95"
+                className="hidden md:flex items-center justify-center w-11 h-11 bg-white/5 border border-white/10 rounded-full hover:bg-[#915EFF] hover:border-[#915EFF] transition-all duration-300 text-gray-300 hover:text-white shrink-0 group/btn shadow-xl active:scale-90 backdrop-blur-sm"
                 title="View Live Project"
               >
                 <ExternalLink className="w-5 h-5 transition-transform group-hover/btn:scale-110" />

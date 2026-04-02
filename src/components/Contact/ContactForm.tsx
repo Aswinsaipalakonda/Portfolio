@@ -126,7 +126,7 @@ export const ContactForm = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full py-4 bg-[#915EFF] text-white font-bold rounded-lg flex items-center justify-center gap-3 hover:bg-[#7f4fff] transition-all transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_4px_20px_rgba(145,94,255,0.3)]"
+          className="w-full py-4 bg-[#915EFF] text-white font-bold rounded-full flex items-center justify-center gap-3 hover:bg-[#7f4fff] transition-all transform hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_8px_30px_rgba(145,94,255,0.25)]"
         >
           {isSubmitting ? 'Sending...' : 'Send Message'}
           <Send className="w-5 h-5" />

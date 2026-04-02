@@ -194,10 +194,10 @@ export const Navbar = () => {
             <Link
               to="/contact"
               onClick={() => setIsMenuOpen(false)}
-              className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg whitespace-nowrap ${
+              className={`px-8 py-3 rounded-full text-sm font-bold transition-all shadow-xl whitespace-nowrap active:scale-95 ${
                 location.pathname === '/contact'
                   ? 'bg-white text-black'
-                  : 'bg-[#915EFF] hover:bg-[#804dee] text-white shadow-purple-500/20 hover:scale-105 active:scale-95'
+                  : 'bg-[#915EFF] hover:bg-[#804dee] text-white shadow-purple-500/25 hover:scale-105'
               }`}
             >
               Contact
@@ -273,7 +273,7 @@ export const Navbar = () => {
                     <Link
                       to="/contact"
                       onClick={() => setIsMenuOpen(false)}
-                      className="w-full px-5 py-4 bg-[#915EFF] text-white rounded-2xl font-bold text-lg flex items-center justify-center gap-3 shadow-xl shadow-purple-900/30 active:scale-95 transition-all"
+                      className="w-full px-6 py-4 bg-[#915EFF] text-white rounded-full font-bold text-lg flex items-center justify-center gap-3 shadow-xl shadow-purple-900/30 active:scale-95 transition-all"
                     >
                       <Mail className="w-5 h-5" />
                       <span>Contact Me</span>
