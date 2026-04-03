@@ -83,14 +83,22 @@ export const Navbar = () => {
   const smoothNavPaddingY = useSpring(navPaddingY, springConfig);
 
   const navLinks = [
-    { name: 'About', path: 'hero', icon: <User className="w-4 h-4" /> },
+    { name: 'Home', path: '/', icon: <Home className="w-4 h-4" /> },
+    { name: 'About', path: '/about', icon: <User className="w-4 h-4" /> },
     { name: 'Experience', path: 'experience', icon: <Briefcase className="w-4 h-4" /> },
     { name: 'Projects', path: 'projects', icon: <Code2 className="w-4 h-4" /> },
-    { name: 'Certificates', path: 'certificates', icon: <Award className="w-4 h-4" /> },
+    { name: 'Certificates', path: '/certificates', icon: <Award className="w-4 h-4" /> },
   ];
 
   const handleLinkClick = (path: string) => {
     setIsMenuOpen(false);
+
+    // Handle dedicated pages
+    if (path.startsWith('/')) {
+      navigate(path);
+      return;
+    }
+
     if (location.pathname !== '/') {
       navigate('/#' + path);
       return;
@@ -170,7 +178,7 @@ export const Navbar = () => {
           
           <div className="flex items-center gap-4">
             {navLinks.map((link) => {
-              const isActive = activeSection === link.path && location.pathname === '/';
+              const isActive = (location.pathname === link.path) || (activeSection === link.path && location.pathname === '/');
               return (
                 <button
                   key={link.name}
@@ -239,7 +247,7 @@ export const Navbar = () => {
 
                 <div className="flex flex-col space-y-3">
                   {navLinks.map((link, idx) => {
-                    const isActive = activeSection === link.path && location.pathname === '/';
+                    const isActive = (location.pathname === link.path) || (activeSection === link.path && location.pathname === '/');
                     return (
                       <motion.button
                         key={link.name}

@@ -4,9 +4,10 @@ import { Languages } from './Languages';
 import { Experience } from './Experience/Experience';
 import { Projects } from './Projects/Projects';
 import { Certificates } from './Certificates/Certificates';
-import { Education } from './Education/Education';
+
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { SEOHead } from './SEOHead';
+import { CallToAction } from './Shared/CallToAction';
 
 export const Content = () => {
   return (
@@ -23,7 +24,8 @@ export const Content = () => {
       <Experience />
       <Projects />
       <Certificates />
-      <Education />
+      <CallToAction />
+
       
       <footer className="w-full py-12 px-6 border-t border-white/5 bg-black/20 backdrop-blur-sm mt-20">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">

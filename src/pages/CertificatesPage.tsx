@@ -5,6 +5,7 @@ import { CertificateCard } from '../components/Certificates/CertificateCard';
 import { CertificateModal } from '../components/Certificates/CertificateModal';
 import { SEOHead } from '../components/SEOHead';
 import { Footer } from '../components/Contact/Footer';
+import { CallToAction } from '../components/Shared/CallToAction';
 
 export const CertificatesPage = () => {
   const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null);
@@ -66,6 +67,7 @@ export const CertificatesPage = () => {
         />
       </section>
 
+      <CallToAction />
       <Footer />
     </div>
   );

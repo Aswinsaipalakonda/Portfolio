@@ -66,6 +66,12 @@ export const About = () => {
             >
               Hire Me
             </Link>
+            <Link
+              to="/about"
+              className="px-9 py-3.5 rounded-full border border-white/20 bg-white/5 text-white font-bold hover:bg-white/10 transition-all duration-300 transform hover:scale-105 flex items-center justify-center text-center shadow-lg active:scale-95"
+            >
+              About Me
+            </Link>
             <motion.a
               href="/resume.html"
               target="_blank"

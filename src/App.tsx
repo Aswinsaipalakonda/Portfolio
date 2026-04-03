@@ -5,11 +5,10 @@ import { Navbar } from './components/Navbar';
 import { Content } from './components/Content';
 import { ContactPage } from './pages/ContactPage';
 import { CertificatesPage } from './pages/CertificatesPage';
+import { AboutPage } from './pages/AboutPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { SplashScreen } from './components/SplashScreen';
 import { ScrollToTop } from './components/ScrollToTop';
-
-
 
 // Super-charge Mobile PageSpeed by deferring heavy WebGL/ThreeJS chunks
 const Canvas = lazy(() => import('@react-three/fiber').then(module => ({ default: module.Canvas })));
@@ -20,7 +19,7 @@ function AppContent() {
   const [loading, setLoading] = useState(window.location.pathname === '/');
   
   const location = useLocation();
-  const is404 = location.pathname !== '/' && location.pathname !== '/contact' && location.pathname !== '/certificates';
+  const is404 = location.pathname !== '/' && location.pathname !== '/contact' && location.pathname !== '/certificates' && location.pathname !== '/about';
 
   return (
     <div className="relative min-h-screen bg-black w-full max-w-full overflow-x-clip">
@@ -39,7 +38,7 @@ function AppContent() {
               <Suspense fallback={null}>
                 <Canvas dpr={[1, 1.5]} gl={{ powerPreference: "high-performance", antialias: false, alpha: false }}>
                   <Suspense fallback={null}>
-                    <Space starCount={is404 ? 200 : (location.pathname === '/contact' ? 400 : 1000)} />
+                    <Space starCount={is404 ? 200 : (location.pathname === '/contact' ? 400 : (location.pathname === '/about' ? 600 : 1000))} />
                   </Suspense>
                 </Canvas>
               </Suspense>
@@ -47,6 +46,7 @@ function AppContent() {
             
             <Routes>
               <Route path="/" element={<Content />} />
+              <Route path="/about" element={<AboutPage />} />
               <Route path="/certificates" element={<CertificatesPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="*" element={<NotFoundPage />} />
