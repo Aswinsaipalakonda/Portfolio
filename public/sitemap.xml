@@ -4,7 +4,7 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
 >
-  <!-- Homepage -->
+  <!-- Homepage (highest priority) -->
   <url>
     <loc>https://aswinsai.tech/</loc>
     <lastmod>2026-04-03</lastmod>
@@ -15,6 +15,16 @@
       <image:loc>https://aswinsai.tech/assets/images/aswin.jpg</image:loc>
       <image:title>Aswinsai Palakonda — Full Stack Developer</image:title>
       <image:caption>Portfolio photo of Aswinsai Palakonda, Co-founder and CTO at Clientura</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aswinsai.tech/assets/rainbuck.jpeg</image:loc>
+      <image:title>Rainbucks Digital Marketplace</image:title>
+      <image:caption>Rainbucks — Digital product marketplace developed by Aswinsai Palakonda</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aswinsai.tech/assets/clientur.jpeg</image:loc>
+      <image:title>Clientura Digital Marketing Agency</image:title>
+      <image:caption>Clientura — Digital marketing agency website built by Aswinsai</image:caption>
     </image:image>
   </url>
 
@@ -29,14 +39,6 @@
       <image:title>About Aswinsai Palakonda</image:title>
       <image:caption>Cinematic hero image of Aswinsai Palakonda</image:caption>
     </image:image>
-  </url>
-
-  <!-- Contact Page -->
-  <url>
-    <loc>https://aswinsai.tech/contact</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
 
   <!-- Certificates Page -->
@@ -59,48 +61,19 @@
     </image:image>
   </url>
 
+  <!-- Contact Page -->
+  <url>
+    <loc>https://aswinsai.tech/contact</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Resume Page -->
   <url>
     <loc>https://aswinsai.tech/resume.html</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-
-  <!-- Anchor-based sections (for deeper indexing signals) -->
-  <url>
-    <loc>https://aswinsai.tech/#experience</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://aswinsai.tech/#projects</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://aswinsai.tech/assets/rainbuck.jpeg</image:loc>
-      <image:title>Rainbucks Digital Marketplace</image:title>
-      <image:caption>Rainbucks — Digital product marketplace developed by Aswinsai Palakonda</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://aswinsai.tech/assets/clientur.jpeg</image:loc>
-      <image:title>Clientura Digital Marketing Agency</image:title>
-      <image:caption>Clientura — Digital marketing agency website built by Aswinsai</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://aswinsai.tech/assets/infinit.jpeg</image:loc>
-      <image:title>Infinity Globals Consultancy</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://aswinsai.tech/assets/homess.jpeg</image:loc>
-      <image:title>Homessy Multi-Service Platform</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://aswinsai.tech/assets/oversea.jpeg</image:loc>
-      <image:title>Right Overseas Solutions</image:title>
-    </image:image>
   </url>
 </urlset>

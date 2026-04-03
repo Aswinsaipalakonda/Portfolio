@@ -100,11 +100,13 @@ export const HomeHero = () => {
             <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-[#915EFF] shadow-2xl shadow-purple-500/30">
               <img
                 src="/assets/images/aswin.jpg"
-                alt="Aswinsai Palakonda - Full Stack Developer"
+                alt="Aswinsai Palakonda - Full Stack Developer and CTO at Clientura"
                 width="400"
                 height="400"
                 className="w-full h-full object-cover"
                 loading="eager"
+                fetchPriority="high"
+                decoding="async"
               />
             </div>
             
