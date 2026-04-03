@@ -5,6 +5,8 @@ interface SEOHeadProps {
   description: string;
   canonical?: string;
   ogImage?: string;
+  ogType?: string;
+  twitterCard?: string;
   schema?: Record<string, any>;
   noindex?: boolean;
 }
@@ -14,6 +16,8 @@ export const SEOHead = ({
   description,
   canonical = 'https://aswinsai.tech',
   ogImage = 'https://aswinsai.tech/assets/images/aswin.jpg',
+  ogType = 'website',
+  twitterCard = 'summary_large_image',
   schema,
   noindex = false,
 }: SEOHeadProps) => {
@@ -30,8 +34,10 @@ export const SEOHead = ({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:url" content={canonical} />
+      <meta property="og:type" content={ogType} />
 
       {/* Twitter */}
+      <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
