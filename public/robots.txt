@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /assets/
+Disallow: /api/
 
 Sitemap: https://aswinsai.tech/sitemap.xml

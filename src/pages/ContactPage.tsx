@@ -3,10 +3,26 @@ import { Canvas } from '@react-three/fiber';
 import { ContactForm } from '../components/Contact/ContactForm';
 import { RotatingGlobe } from '../components/Contact/RotatingGlobe';
 import { Footer } from '../components/Contact/Footer';
+import { SEOHead } from '../components/SEOHead';
 
 export const ContactPage = () => {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aswinsai.tech" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://aswinsai.tech/contact" }
+    ]
+  };
+
   return (
     <div className="relative z-10 min-h-screen pt-20">
+      <SEOHead
+        title="Contact Me | Aswinsai Palakonda"
+        description="Get in touch with Aswinsai Palakonda. Available for freelance opportunities, collaborations, and tech discussions."
+        canonical="https://aswinsai.tech/contact"
+        schema={breadcrumbSchema}
+      />
       <section className="py-20 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div 

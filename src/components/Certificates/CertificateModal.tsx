@@ -6,9 +6,10 @@ interface CertificateModalProps {
   isOpen: boolean;
   onClose: () => void;
   imageUrl: string;
+  altText?: string;
 }
 
-export const CertificateModal: React.FC<CertificateModalProps> = ({ isOpen, onClose, imageUrl }) => {
+export const CertificateModal: React.FC<CertificateModalProps> = ({ isOpen, onClose, imageUrl, altText }) => {
   if (!isOpen) return null;
 
   return (
@@ -35,7 +36,8 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({ isOpen, onCl
           </button>
           <img
             src={imageUrl}
-            alt="Certificate"
+            alt={altText || "Certificate"}
+            loading="lazy"
             className="w-full h-auto rounded-lg"
           />
         </motion.div>

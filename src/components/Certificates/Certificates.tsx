@@ -8,37 +8,37 @@ const certificates = [
     title: "IEEE Sustainable Solutions for Humanity",
     issuer: "IEEE Region 10",
     date: "Sept 2024",
-    imageUrl: "/assets/images/IEEE.png"
+    imageUrl: "/assets/images/IEE.jpeg"
   },
   {
     title: "E-Summit25 Ideastrom",
     issuer: "IIT Roorkee",
     date: "Mar 2025",
-    imageUrl: "/assets/images/Ideastrom.png"
+    imageUrl: "/assets/images/Ideastro.jpeg"
   },
   {
     title: "E-Summit25 Productathon",
     issuer: "IIT Roorkee",
     date: "Mar 2025",
-    imageUrl: "/assets/images/Productathon.png"
+    imageUrl: "/assets/images/Productatho.jpeg"
   },
   {
-    title: "Start-up Expo ",
+    title: "Start-up Expo",
     issuer: "Codeiam Club AU",
     date: "Mar 2025",
-    imageUrl: "/assets/images/Au.png"
+    imageUrl: "/assets/images/A.jpeg"
   },
   {
     title: "Internship in Netmaxin",
     issuer: "Netmaxin",
     date: "Feb 2024",
-    imageUrl: "/assets/images/Netmaxin.png"
+    imageUrl: "/assets/images/Netmaxi.jpeg"
   },
   {
     title: "Introduction to Marketing",
     issuer: "University of Edinburgh",
     date: "Nov 2024",
-    imageUrl: "/assets/images/Intro To Dm_page-0001.jpg"
+    imageUrl: "/assets/images/IntroToDm_page-0001.jpg"
   },
   {
     title: "Python Programming",
@@ -56,7 +56,115 @@ const certificates = [
     title: "Digital Marketing Strategy",
     issuer: "University of Edinburgh",
     date: "Nov 2024",
-    imageUrl: "/assets/images/DM Strategy_page-0001.jpg"
+    imageUrl: "/assets/images/DMStrategy_page-0001.jpg"
+  },
+  {
+    title: "GDG Dev Fest",
+    issuer: "GDG",
+    date: "2024",
+    imageUrl: "/assets/images/GDGDevFest.jpg"
+  },
+  {
+    title: "ImperialX ALFM003",
+    issuer: "edX",
+    date: "2024",
+    imageUrl: "/assets/images/ImperialXALFM003Certificate_edX_page-0001.jpg"
+  },
+  {
+    title: "Introduction to MCP",
+    issuer: "Microsoft",
+    date: "2024",
+    imageUrl: "/assets/images/Intro-MCP.jpg"
+  },
+  {
+    title: "Advanced MCP",
+    issuer: "Microsoft",
+    date: "2024",
+    imageUrl: "/assets/images/MCP-Advance.jpeg"
+  },
+  {
+    title: "Cybersecurity Analyst",
+    issuer: "Cyberthrey",
+    date: "2024",
+    imageUrl: "/assets/images/Cyberthrey.jpeg"
+  },
+  {
+    title: "Salesforce Developer",
+    issuer: "Salesforce",
+    date: "2024",
+    imageUrl: "/assets/images/Salesforc.jpeg"
+  },
+  {
+    title: "Accenture Certification",
+    issuer: "Accenture",
+    date: "2024",
+    imageUrl: "/assets/images/accentur.jpeg"
+  },
+  {
+    title: "Cisco Networking",
+    issuer: "Cisco",
+    date: "2024",
+    imageUrl: "/assets/images/cisco.jpg"
+  },
+  {
+    title: "Data Analytics",
+    issuer: "Data Analytics",
+    date: "2024",
+    imageUrl: "/assets/images/data_analys.jpeg"
+  },
+  {
+    title: "Data Science Hackathon",
+    issuer: "Hackathon",
+    date: "2024",
+    imageUrl: "/assets/images/ds_hac.jpeg"
+  },
+  {
+    title: "FlutterFlow Certification",
+    issuer: "FlutterFlow",
+    date: "2024",
+    imageUrl: "/assets/images/flutterflow.jpg"
+  },
+  {
+    title: "NASSCOM Certification",
+    issuer: "NASSCOM",
+    date: "2024",
+    imageUrl: "/assets/images/nassco.jpeg"
+  },
+  {
+    title: "AI for Business",
+    issuer: "AI",
+    date: "2024",
+    imageUrl: "/assets/images/Ai_for_cb.jpeg"
+  },
+  {
+    title: "Quantum Computing",
+    issuer: "Quantum",
+    date: "2024",
+    imageUrl: "/assets/images/Quantu.jpeg"
+  },
+  {
+    title: "Outskill Certification",
+    issuer: "Outskill",
+    date: "2024",
+    imageUrl: "/assets/images/outskil.jpeg"
+  },
+  {
+    title: "Sankalp Hackathon",
+    issuer: "Sankalp",
+    date: "2024",
+    imageUrl: "/assets/images/sankal.jpeg"
+  },
+  {
+    title: "Swayam NPTEL",
+    issuer: "Swayam",
+    date: "2024",
+    imageUrl: "/assets/images/swaya.jpeg"
+  },
+  {
+    title: "TCS Certification",
+    issuer: "TCS",
+    date: "2024",
+    imageUrl: "/assets/images/tc.jpeg"
   }
 ];
 
@@ -92,6 +200,7 @@ export const Certificates: React.FC = () => {
           isOpen={!!selectedCertificate}
           onClose={() => setSelectedCertificate(null)}
           imageUrl={selectedCertificate || ''}
+          altText={certificates.find(c => c.imageUrl === selectedCertificate)?.title || 'Certificate'}
         />
       </div>
     </section>

@@ -51,7 +51,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className="absolute inset-0 bg-linear-to-t from-[#151030] via-transparent to-transparent z-10 opacity-60 pointer-events-none md:hidden" />
         <img
           src={image}
-          alt={title}
+          alt={`Project: ${title}`}
+          width="800"
+          height="450"
           loading="lazy"
           className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
         />

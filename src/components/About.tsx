@@ -101,6 +101,8 @@ export const About = () => {
               <img
                 src="/assets/images/aswin.jpg"
                 alt="Aswinsai Palakonda - Full Stack Developer"
+                width="400"
+                height="400"
                 className="w-full h-full object-cover"
                 loading="eager"
               />

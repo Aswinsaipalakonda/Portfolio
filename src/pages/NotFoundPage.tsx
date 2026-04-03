@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import { Home, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SEOHead } from '../components/SEOHead';
 
 export function NotFoundPage() {
   return (
     <div className="min-h-[80vh] bg-transparent flex flex-col justify-center items-center relative overflow-hidden z-20 pt-20 pb-16">
+      <SEOHead title="Page Not Found | Aswinsai Palakonda" description="The page you are looking for does not exist." noindex={true} />
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#915EFF] rounded-full blur-[150px] opacity-20 pointer-events-none" />
 

@@ -6,10 +6,15 @@ import { Projects } from './Projects/Projects';
 import { Certificates } from './Certificates/Certificates';
 import { Education } from './Education/Education';
 import { Github, Linkedin, Mail } from 'lucide-react';
+import { SEOHead } from './SEOHead';
 
 export const Content = () => {
   return (
     <main className="relative z-10 w-full max-w-full overflow-x-clip pt-4">
+      <SEOHead
+        title="Aswinsai Palakonda | Co-founder & CTO at Clientura"
+        description="Aswinsai Palakonda — Full Stack Developer & AI Enthusiast building high-performance web apps and scalable digital platforms."
+      />
       <section id="hero">
         <About />
       </section>

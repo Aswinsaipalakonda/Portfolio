@@ -6,7 +6,7 @@ const projects = [
   {
     title: 'Rainbucks - Digital Product Marketplace',
     description: 'Developed a digital product marketplace offering Digital Courses with different packages. Implemented admin and client dashboards, purchase management, and product delivery automation.',
-    image: '/assets/rainbucks.png',
+    image: '/assets/rainbuck.jpeg',
     date: '2025',
     demoLink: 'https://rainbucks.org',
     techStack: ['Next.js', 'Tailwind CSS', 'Supabase', 'Stripe']
@@ -14,7 +14,7 @@ const projects = [
   {
     title: 'Clientura - Digital Marketing Agency',
     description: 'Built a portfolio and client management platform for a digital marketing agency. Included features for client onboarding, project showcases, testimonials, and contact automation.',
-    image: '/assets/clientura.png',
+    image: '/assets/clientur.jpeg',
     date: '2025',
     demoLink: 'https://clientura.org',
     techStack: ['React', 'Framer Motion', 'Tailwind CSS']
@@ -22,7 +22,7 @@ const projects = [
   {
     title: 'Infinity Globals - Abroad Consultancy',
     description: 'Created a Next.js-based consultancy platform helping students connect with overseas universities. Integrated dynamic course listings, inquiry forms, and admin management systems.',
-    image: '/assets/infinity.png',
+    image: '/assets/infinit.jpeg',
     date: '2025',
     demoLink: 'http://infinitiglobals.com/',
     techStack: ['Next.js', 'App Router', 'TypeScript', 'Prisma']
@@ -30,7 +30,7 @@ const projects = [
   {
     title: 'Clientura EMS',
     description: 'Architected and deployed a custom, end-to-end Employee Management System using PHP and MySQL to centralize workforce data and streamline administrative workflows.',
-    image: '/assets/clientura_ems.png',
+    image: '/assets/clientura_em.jpeg',
     date: '2025',
     demoLink: 'https://ems.clientura.org',
     techStack: ['PHP', 'MySQL', 'Bootstrap', 'JavaScript']
@@ -38,7 +38,7 @@ const projects = [
   {
   title: 'Homessy Platform',
   description: 'Designed and developed a scalable multi-service platform integrating grocery delivery and home services using WordPress, Elementor, and Supabase. Implemented dynamic product management, service booking workflows, and optimized SEO structure for hyperlocal market expansion.',
-  image: '/assets/homessy.png',
+  image: '/assets/homess.jpeg',
   date: '2025',
   demoLink: 'https://homessy.com',
   techStack: ['WordPress', 'Supabase', 'Elementor', 'SEO']
@@ -46,7 +46,7 @@ const projects = [
   {
   title: 'Grama Voice Platform',
   description: 'Built a community-driven digital platform to amplify rural voices and local governance transparency. Developed structured content modules, user interaction flows, and scalable backend integration to support public engagement and information accessibility.',
-  image: '/assets/grama_voice.png',
+  image: '/assets/grama_voic.jpeg',
   date: '2025',
   demoLink: 'https://gramavoice.clientura.org',
   techStack: ['React', 'Node.js', 'MongoDB', 'Express']
@@ -54,7 +54,7 @@ const projects = [
   {
   title: 'Right Overseas Solutions',
   description: 'Designed and developed a high-conversion overseas education and immigration consultancy website with structured service architecture, country-specific landing flows, and optimized lead capture system. Focused on credibility positioning, consultation booking funnels, and trust-driven UI design.',
-  image: '/assets/overseas.png',
+  image: '/assets/oversea.jpeg',
   date: '2025',
   demoLink: 'https://rightoverseassolutions.com',
   techStack: ['Next.js', 'Motion', 'Tailwind CSS', 'LeadGen']

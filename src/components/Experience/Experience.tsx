@@ -56,7 +56,7 @@ export const Experience = () => {
   const x = useTransform(scrollYProgress, [0, 0.8], ["0%", "-80%"]);
 
   // Custom Cursor Floating Image (Desktop Only)
-  const [hoveredExp, setHoveredExp] = useState<{ id: number, image: string } | null>(null);
+  const [hoveredExp, setHoveredExp] = useState<{ id: number, image: string, title: string, company: string } | null>(null);
   
   const cursorX = useMotionValue(-500);
   const cursorY = useMotionValue(-500);
@@ -112,7 +112,10 @@ export const Experience = () => {
             <div className="absolute inset-0 bg-blue-500/10 z-10" />
             <img 
               src={hoveredExp.image} 
-              alt="Preview" 
+              alt={`${hoveredExp.company} - ${hoveredExp.title}`} 
+              width="400"
+              height="300"
+              loading="lazy"
               className="w-full h-full object-cover" 
             />
           </div>
@@ -137,13 +140,13 @@ export const Experience = () => {
         <motion.div style={{ x }} className="flex w-[500vw] items-center pt-28 md:pt-12">
           
           {/* Subtle Connecting Line */}
-          <div className="absolute left-0 right-0 top-1/2 h-[1px] bg-white/5 -translate-y-1/2 z-0 hidden md:block" />
+          <div className="absolute left-0 right-0 top-1/2 h-px bg-white/5 -translate-y-1/2 z-0 hidden md:block" />
 
           {experiences.map((exp) => (
             <div key={exp.id} className="w-screen flex items-center justify-center p-6 md:p-20 shrink-0 relative z-10">
               
               <motion.div 
-                onMouseEnter={() => setHoveredExp({ id: exp.id, image: exp.image })}
+                onMouseEnter={() => setHoveredExp({ id: exp.id, image: exp.image, title: exp.title, company: exp.company })}
                 onMouseLeave={() => setHoveredExp(null)}
                 className="relative flex flex-col items-center bg-gray-900/40 backdrop-blur-xl px-8 py-10 md:px-12 md:py-16 rounded-[2.5rem] border border-gray-800 shadow-2xl max-w-lg md:max-w-2xl w-full group transition-all duration-300 hover:border-blue-500/30"
               >
@@ -154,9 +157,15 @@ export const Experience = () => {
 
                 <div className="flex flex-col items-center text-center w-full relative z-10">
                   
-                  {/* Mobile Preview (Inline) - Moved to top for attraction */}
                   <div className="md:hidden w-24 h-24 mb-6 rounded-2xl overflow-hidden border border-gray-800 shadow-xl bg-black">
-                     <img src={exp.image} alt={exp.title} className="w-full h-full object-cover" />
+                     <img 
+                        src={exp.image} 
+                        alt={`${exp.company} - ${exp.title}`} 
+                        width="96"
+                        height="96"
+                        loading="lazy"
+                        className="w-full h-full object-cover" 
+                      />
                   </div>
 
                   {/* Date Badge */}
