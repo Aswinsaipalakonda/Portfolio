@@ -15,7 +15,7 @@ export const Content = () => {
         title="Aswinsai Palakonda | Co-founder & CTO at Clientura"
         description="Aswinsai Palakonda — Full Stack Developer & AI Enthusiast building high-performance web apps and scalable digital platforms."
       />
-      <section id="hero">
+      <section id="hero" className="relative">
         <About />
       </section>
       <Skills />

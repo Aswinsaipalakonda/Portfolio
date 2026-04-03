@@ -1,6 +1,6 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const FlipWords = ({
@@ -17,8 +17,9 @@ export const FlipWords = ({
 
   // thanks for the fix Julian - https://github.com/Julian-AT
   const startAnimation = useCallback(() => {
-    const word = words[words.indexOf(currentWord) + 1] || words[0];
-    setCurrentWord(word);
+    const currentIndex = words.findIndex((w) => w === currentWord);
+    const nextIndex = (currentIndex + 1) % words.length;
+    setCurrentWord(words[nextIndex]);
     setIsAnimating(true);
   }, [currentWord, words]);
 
@@ -33,11 +34,13 @@ export const FlipWords = ({
 
   return (
     <AnimatePresence
+      mode="popLayout"
       onExitComplete={() => {
         setIsAnimating(false);
       }}
     >
       <motion.div
+        layout
         initial={{
           opacity: 0,
           y: 10,
@@ -68,7 +71,7 @@ export const FlipWords = ({
         {/* edit suggested by Sajal: https://x.com/DewanganSajal */}
         {currentWord.split(" ").map((word, wordIndex) => (
           <motion.span
-            key={word + wordIndex}
+            key={`word-${word}-${wordIndex}`}
             initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{
@@ -79,7 +82,7 @@ export const FlipWords = ({
           >
             {word.split("").map((letter, letterIndex) => (
               <motion.span
-                key={word + letterIndex}
+                key={`letter-${wordIndex}-${letter}-${letterIndex}`}
                 initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{
