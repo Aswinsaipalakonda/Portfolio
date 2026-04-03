@@ -9,7 +9,8 @@ import {
   Briefcase, 
   Mail, 
   Menu, 
-  X 
+  X,
+  Award
 } from 'lucide-react';
 
 export const Navbar = () => {
@@ -47,7 +48,7 @@ export const Navbar = () => {
     };
 
     const observer = new IntersectionObserver(handleIntersect, options);
-    const sections = ['hero', 'about', 'experience', 'projects'];
+    const sections = ['hero', 'about', 'experience', 'projects', 'certificates'];
     sections.forEach(id => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
@@ -85,6 +86,7 @@ export const Navbar = () => {
     { name: 'About', path: 'hero', icon: <User className="w-4 h-4" /> },
     { name: 'Experience', path: 'experience', icon: <Briefcase className="w-4 h-4" /> },
     { name: 'Projects', path: 'projects', icon: <Code2 className="w-4 h-4" /> },
+    { name: 'Certificates', path: 'certificates', icon: <Award className="w-4 h-4" /> },
   ];
 
   const handleLinkClick = (path: string) => {
@@ -258,6 +260,7 @@ export const Navbar = () => {
                           {link.name === 'About' && <User size={18} />}
                           {link.name === 'Projects' && <Code2 size={18} />}
                           {link.name === 'Experience' && <Briefcase size={18} />}
+                          {link.name === 'Certificates' && <Award size={18} />}
                         </div>
                         <span className="font-bold text-xl tracking-tight">{link.name}</span>
                       </motion.button>
