@@ -1,6 +1,38 @@
+# Robots.txt for https://aswinsai.tech
+# Aswinsai Palakonda — Full Stack Developer Portfolio
+
+# Allow all search engine bots
 User-agent: *
 Allow: /
-Disallow: /assets/
-Disallow: /api/
+Allow: /about
+Allow: /contact
+Allow: /certificates
+Allow: /resume.html
 
+# Disallow non-public paths
+Disallow: /api/
+Disallow: /_redirects
+
+# Google-specific directives
+User-agent: Googlebot
+Allow: /
+Allow: /assets/images/
+Allow: /assets/*.jpeg
+Allow: /assets/*.jpg
+Allow: /assets/*.png
+Allow: /assets/*.webp
+
+# Google Image Bot (allow all images to be indexed)
+User-agent: Googlebot-Image
+Allow: /
+Allow: /assets/
+
+# Bing Bot
+User-agent: Bingbot
+Allow: /
+
+# Sitemap location
 Sitemap: https://aswinsai.tech/sitemap.xml
+
+# Host directive (some bots use this)
+Host: https://aswinsai.tech

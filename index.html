@@ -1,12 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- Primary Meta Tags -->
     <title>
-      Aswinsai Palakonda | Co-founder & CTO at Clientura
+      Aswinsai Palakonda | Co-founder & CTO at Clientura | Full Stack Developer
     </title>
     <meta
       name="title"
@@ -14,17 +15,19 @@
     />
     <meta
       name="description"
-      content="Aswinsai Palakonda — Full Stack Developer & AI Enthusiast building high-performance web apps and scalable digital platforms."
+      content="Aswinsai Palakonda is a Full Stack Developer, Co-founder & CTO at Clientura. Expert in React, TypeScript, Node.js, and AI-driven applications. Explore projects, certifications, and get in touch for collaborations."
     />
     <meta
       name="keywords"
-      content="Aswinsai Palakonda, Aswinsai, aswinsai.tech, Co-founder Clientura, CTO Clientura, Full Stack Developer, React Developer, AI Enthusiast, Software Developer, Frontend Developer, Backend Developer, Developer Portfolio, Freelance Developer India, Web Development Services"
+      content="Aswinsai Palakonda, Aswinsai, aswinsai.tech, Co-founder Clientura, CTO Clientura, Full Stack Developer, React Developer, AI Enthusiast, Software Developer, Frontend Developer, Backend Developer, Developer Portfolio, Freelance Developer India, Web Development Services, Next.js Developer, TypeScript Developer, Node.js Developer, Clientura, Digital Marketing Developer, Portfolio Website, Hire Full Stack Developer, Web App Developer India, SaaS Developer, React TypeScript Portfolio, Aswin Sai Palakonda, Sai Palakonda"
     />
     <meta name="author" content="Aswinsai Palakonda" />
     <meta
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow" />
     <meta name="language" content="English" />
     <meta name="revisit-after" content="3 days" />
     <meta name="rating" content="general" />
@@ -33,9 +36,20 @@
     <meta name="target" content="all" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Geo & Locale Tags (helps local SEO) -->
+    <meta name="geo.region" content="IN-AP" />
+    <meta name="geo.placename" content="Andhra Pradesh, India" />
+    <meta name="ICBM" content="15.9129, 79.7400" />
+    <meta name="geo.position" content="15.9129;79.7400" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://aswinsai.tech/" />
+
+    <!-- Alternate / hreflang for international SEO -->
+    <link rel="alternate" hreflang="en" href="https://aswinsai.tech/" />
+    <link rel="alternate" hreflang="x-default" href="https://aswinsai.tech/" />
 
     <!-- Favicon -->
     <link rel="icon" href="/assets/icons/favicon.ico" />
@@ -58,7 +72,7 @@
     />
     <link rel="manifest" href="/assets/icons/site.webmanifest" />
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / Facebook / LinkedIn / Discord / Slack -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://aswinsai.tech/" />
     <meta
@@ -67,7 +81,7 @@
     />
     <meta
       property="og:description"
-      content="Aswinsai Palakonda — Full Stack Developer & AI Enthusiast building high-performance web apps and digital platforms."
+      content="Aswinsai Palakonda — Full Stack Developer & AI Enthusiast. Building high-performance web apps, SaaS platforms, and digital products."
     />
     <meta
       property="og:image"
@@ -82,8 +96,7 @@
     <meta property="og:site_name" content="Aswinsai Palakonda — Portfolio" />
     <meta property="og:locale" content="en_US" />
 
-
-    <!-- Twitter -->
+    <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://aswinsai.tech/" />
     <meta
@@ -100,6 +113,7 @@
     />
     <meta name="twitter:image:alt" content="Aswinsai Palakonda Portfolio" />
     <meta name="twitter:creator" content="@aswinsai" />
+    <meta name="twitter:site" content="@aswinsai" />
 
     <!-- Additional SEO -->
     <meta name="theme-color" content="#915EFF" />
@@ -108,9 +122,12 @@
       name="msapplication-TileImage"
       content="/assets/icons/android-chrome-192x192.png"
     />
+    <meta name="application-name" content="Aswinsai Palakonda Portfolio" />
+    <meta name="apple-mobile-web-app-title" content="Aswinsai" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <!-- Google Search Console Verification (Replace YOUR_VERIFICATION_CODE after setup) -->
-    <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> -->
+    <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="b5F-JitCRAjHY1M5hW_fntc_oOK9kx4H3i0eKFVpi6Y" />
 
     <!-- Google tag (gtag.js) -->
@@ -119,7 +136,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-3XLHLZDY6P');
     </script>
 
@@ -132,27 +148,34 @@
     />
     <link rel="dns-prefetch" href="https://raw.githubusercontent.com" />
     <link rel="dns-prefetch" href="https://skillicons.dev" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
-    <!-- Structured Data / JSON-LD: Person -->
+    <!-- ============================================================= -->
+    <!-- STRUCTURED DATA / JSON-LD: Person (Google Knowledge Panel)     -->
+    <!-- ============================================================= -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://aswinsai.tech/#person",
         "name": "Aswinsai Palakonda",
-        "alternateName": "Aswinsai",
+        "alternateName": ["Aswinsai", "Aswin Sai Palakonda"],
         "url": "https://aswinsai.tech",
-        "image": "https://aswinsai.tech/assets/images/aswin.jpg",
-        "jobTitle": [
-          "Co-founder & CTO",
-          "Full Stack Developer"
-        ],
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://aswinsai.tech/assets/images/aswin.jpg",
+          "width": 400,
+          "height": 400
+        },
+        "jobTitle": ["Co-founder & CTO", "Full Stack Developer"],
         "worksFor": [
           {
             "@type": "Organization",
-            "name": "Clientura"
+            "name": "Clientura",
+            "url": "https://clientura.org"
           }
         ],
-        "description": "Aswinsai Palakonda is the Co-founder & CTO of Clientura, and a Full Stack Developer & AI Enthusiast specializing in React, TypeScript, Node.js, and scalable platform architecture.",
+        "description": "Aswinsai Palakonda is the Co-founder & CTO of Clientura, a Full Stack Developer & AI Enthusiast specializing in React, TypeScript, Node.js, Next.js, and scalable platform architecture.",
         "email": "mailto:aswinsaipalakonda@gmail.com",
         "sameAs": [
           "https://github.com/Aswinsaipalakonda",
@@ -162,42 +185,94 @@
         "knowsAbout": [
           "Full Stack Web Development",
           "React.js",
+          "Next.js",
           "TypeScript",
           "Node.js",
-          "Chief Technology Officer",
-          "Company Architecture",
-          "Digital Marketing",
+          "Python",
           "Artificial Intelligence",
-          "SEO Optimization"
+          "SEO Optimization",
+          "SaaS Development",
+          "Digital Marketing",
+          "UI/UX Design",
+          "Cloud Architecture",
+          "DevOps"
+        ],
+        "hasOccupation": [
+          {
+            "@type": "Occupation",
+            "name": "Full Stack Developer",
+            "occupationLocation": {
+              "@type": "Country",
+              "name": "India"
+            },
+            "skills": "React, TypeScript, Node.js, Next.js, Python, MongoDB, PostgreSQL, Supabase"
+          },
+          {
+            "@type": "Occupation",
+            "name": "Co-founder & CTO",
+            "occupationLocation": {
+              "@type": "Country",
+              "name": "India"
+            }
+          }
         ],
         "alumniOf": {
           "@type": "EducationalOrganization",
           "name": "Sri Chaitanya College"
+        },
+        "nationality": {
+          "@type": "Country",
+          "name": "India"
         }
       }
     </script>
 
-    <!-- Structured Data / JSON-LD: WebSite (for sitelinks in search) -->
+    <!-- ============================================================= -->
+    <!-- STRUCTURED DATA / JSON-LD: ProfilePage (rich search result)    -->
+    <!-- ============================================================= -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "dateCreated": "2024-01-01T00:00:00+05:30",
+        "dateModified": "2026-04-03T00:00:00+05:30",
+        "mainEntity": {
+          "@type": "Person",
+          "@id": "https://aswinsai.tech/#person"
+        }
+      }
+    </script>
+
+    <!-- ============================================================= -->
+    <!-- STRUCTURED DATA / JSON-LD: WebSite (sitelinks search box)     -->
+    <!-- ============================================================= -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
+        "@id": "https://aswinsai.tech/#website",
         "name": "Aswinsai Palakonda Portfolio",
         "url": "https://aswinsai.tech",
-        "description": "Personal portfolio of Aswinsai Palakonda — Full Stack Developer, No-Code Developer, and AI Enthusiast.",
-        "author": {
+        "description": "Personal portfolio of Aswinsai Palakonda — Full Stack Developer, Co-founder & CTO of Clientura, AI Enthusiast.",
+        "publisher": {
           "@type": "Person",
-          "name": "Aswinsai Palakonda"
+          "@id": "https://aswinsai.tech/#person"
         },
+        "inLanguage": "en-US",
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://aswinsai.tech/?q={search_term_string}",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://aswinsai.tech/?q={search_term_string}"
+          },
           "query-input": "required name=search_term_string"
         }
       }
     </script>
 
-    <!-- Structured Data / JSON-LD: SiteNavigationElement (for Google Sitelinks) -->
+    <!-- ============================================================= -->
+    <!-- STRUCTURED DATA / JSON-LD: SiteNavigationElement              -->
+    <!-- ============================================================= -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -207,41 +282,182 @@
             "@type": "SiteNavigationElement",
             "position": 1,
             "name": "Home",
+            "description": "Aswinsai Palakonda homepage — Full Stack Developer portfolio",
             "url": "https://aswinsai.tech/"
           },
           {
             "@type": "SiteNavigationElement",
             "position": 2,
-            "name": "Introduction",
-            "url": "https://aswinsai.tech/#hero"
+            "name": "About",
+            "description": "Learn more about Aswinsai Palakonda's journey, skills, and education",
+            "url": "https://aswinsai.tech/about"
           },
           {
             "@type": "SiteNavigationElement",
             "position": 3,
             "name": "Experience",
+            "description": "Professional experience and career journey of Aswinsai Palakonda",
             "url": "https://aswinsai.tech/#experience"
           },
           {
             "@type": "SiteNavigationElement",
             "position": 4,
             "name": "Projects",
+            "description": "Portfolio projects showcasing web development expertise",
             "url": "https://aswinsai.tech/#projects"
           },
           {
             "@type": "SiteNavigationElement",
             "position": 5,
-            "name": "Contact",
-            "url": "https://aswinsai.tech/contact"
+            "name": "Certificates",
+            "description": "Professional certifications and academic credentials",
+            "url": "https://aswinsai.tech/certificates"
           },
           {
             "@type": "SiteNavigationElement",
             "position": 6,
-            "name": "Certificates",
-            "url": "https://aswinsai.tech/certificates"
+            "name": "Contact",
+            "description": "Get in touch with Aswinsai for collaborations and freelance work",
+            "url": "https://aswinsai.tech/contact"
           }
         ]
       }
     </script>
+
+    <!-- ============================================================= -->
+    <!-- STRUCTURED DATA / JSON-LD: Organization (Clientura)           -->
+    <!-- ============================================================= -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Clientura",
+        "url": "https://clientura.org",
+        "founder": {
+          "@type": "Person",
+          "@id": "https://aswinsai.tech/#person"
+        },
+        "description": "A digital marketing agency building scalable web platforms and marketing solutions.",
+        "foundingDate": "2025"
+      }
+    </script>
+
+    <!-- ============================================================= -->
+    <!-- STRUCTURED DATA / JSON-LD: FAQPage (rich result snippets)     -->
+    <!-- ============================================================= -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Who is Aswinsai Palakonda?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Aswinsai Palakonda is a Full Stack Developer, Co-founder & CTO of Clientura, and an AI Enthusiast. He specializes in building high-performance web applications using React, TypeScript, Next.js, and Node.js."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What services does Aswinsai Palakonda offer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Aswinsai offers full stack web development, SaaS platform development, AI-powered application development, UI/UX design, SEO optimization, and digital marketing solutions through his agency Clientura."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I hire Aswinsai Palakonda?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can hire Aswinsai by visiting the Contact page at https://aswinsai.tech/contact or emailing aswinsaipalakonda@gmail.com. He is available for freelance projects, full-time opportunities, and technical consulting."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Clientura?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Clientura is a digital marketing agency co-founded by Aswinsai Palakonda. It offers web development, digital marketing, and scalable platform solutions for businesses. Visit https://clientura.org for more information."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What technologies does Aswinsai use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Aswinsai is proficient in React, Next.js, TypeScript, Node.js, Python, MongoDB, PostgreSQL, Supabase, Tailwind CSS, Framer Motion, Three.js, and various AI/ML technologies."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- ============================================================= -->
+    <!-- STRUCTURED DATA / JSON-LD: CreativeWork portfolio collection  -->
+    <!-- ============================================================= -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Aswinsai Palakonda — Project Portfolio",
+        "description": "A collection of web development projects by Aswinsai Palakonda including SaaS platforms, e-commerce solutions, and digital products.",
+        "url": "https://aswinsai.tech/#projects",
+        "author": {
+          "@type": "Person",
+          "@id": "https://aswinsai.tech/#person"
+        },
+        "hasPart": [
+          {
+            "@type": "CreativeWork",
+            "name": "Rainbucks — Digital Product Marketplace",
+            "description": "A digital product marketplace offering Digital Courses with purchase management and automation.",
+            "url": "https://rainbucks.org",
+            "image": "https://aswinsai.tech/assets/rainbuck.jpeg",
+            "creator": { "@type": "Person", "@id": "https://aswinsai.tech/#person" },
+            "dateCreated": "2025"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Clientura — Digital Marketing Agency",
+            "description": "Portfolio and client management platform for a digital marketing agency with testimonials and contact automation.",
+            "url": "https://clientura.org",
+            "image": "https://aswinsai.tech/assets/clientur.jpeg",
+            "creator": { "@type": "Person", "@id": "https://aswinsai.tech/#person" },
+            "dateCreated": "2025"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Infinity Globals — Abroad Consultancy Platform",
+            "description": "Next.js consultancy platform helping students connect with overseas universities.",
+            "url": "http://infinitiglobals.com/",
+            "image": "https://aswinsai.tech/assets/infinit.jpeg",
+            "creator": { "@type": "Person", "@id": "https://aswinsai.tech/#person" },
+            "dateCreated": "2025"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Homessy Platform",
+            "description": "Multi-service platform integrating grocery delivery and home services.",
+            "url": "https://homessy.com",
+            "image": "https://aswinsai.tech/assets/homess.jpeg",
+            "creator": { "@type": "Person", "@id": "https://aswinsai.tech/#person" },
+            "dateCreated": "2025"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Right Overseas Solutions",
+            "description": "High-conversion overseas education and immigration consultancy website.",
+            "url": "https://rightoverseassolutions.com",
+            "image": "https://aswinsai.tech/assets/oversea.jpeg",
+            "creator": { "@type": "Person", "@id": "https://aswinsai.tech/#person" },
+            "dateCreated": "2025"
+          }
+        ]
+      }
+    </script>
+
   </head>
   <body>
     <noscript>
@@ -255,13 +471,22 @@
         "
       >
         <h1>
-          Aswinsai Palakonda — Full Stack Developer
+          Aswinsai Palakonda — Full Stack Developer & CTO at Clientura
         </h1>
         <p>
-          Aswinsai Palakonda is a Full Stack Developer, AI Enthusiast, and
-          strategic leader behind platforms like Clientura. Please
+          Aswinsai Palakonda is a Full Stack Developer, AI Enthusiast, and the
+          Co-founder & CTO of Clientura — a digital marketing agency. He 
+          specializes in React, TypeScript, Next.js, and Node.js. Please
           enable JavaScript to view this portfolio.
         </p>
+        <nav>
+          <ul style="list-style: none; padding: 1rem 0;">
+            <li style="display: inline; margin: 0 1rem;"><a href="/" style="color: #915eff">Home</a></li>
+            <li style="display: inline; margin: 0 1rem;"><a href="/about" style="color: #915eff">About</a></li>
+            <li style="display: inline; margin: 0 1rem;"><a href="/certificates" style="color: #915eff">Certificates</a></li>
+            <li style="display: inline; margin: 0 1rem;"><a href="/contact" style="color: #915eff">Contact</a></li>
+          </ul>
+        </nav>
         <p>
           Contact:
           <a href="mailto:aswinsaipalakonda@gmail.com" style="color: #915eff"

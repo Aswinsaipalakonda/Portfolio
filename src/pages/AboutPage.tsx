@@ -7,12 +7,38 @@ import { AboutTestimonials } from '../components/About/Testimonials';
 import { CallToAction } from '../components/Shared/CallToAction';
 
 export const AboutPage = () => {
+  const aboutSchemas = [
+    // BreadcrumbList
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aswinsai.tech" },
+        { "@type": "ListItem", "position": 2, "name": "About", "item": "https://aswinsai.tech/about" }
+      ]
+    },
+    // AboutPage schema
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About Aswinsai Palakonda",
+      "description": "Discover the journey, education, tech stack, and testimonials of Aswinsai Palakonda — Full Stack Developer, CTO at Clientura, and AI Enthusiast.",
+      "url": "https://aswinsai.tech/about",
+      "isPartOf": { "@id": "https://aswinsai.tech/#website" },
+      "mainEntity": { "@id": "https://aswinsai.tech/#person" },
+      "inLanguage": "en-US",
+      "dateModified": "2026-04-03"
+    }
+  ];
+
   return (
     <div className="relative z-10 min-h-screen pt-12 flex flex-col overflow-x-hidden">
       <SEOHead
-        title="About Me | Aswinsai Palakonda"
-        description="Discover the journey, skills, and professional experience of Aswinsai Palakonda, Full Stack Developer and AI Enthusiast."
+        title="About Aswinsai Palakonda | Full Stack Developer, Education & Skills"
+        description="Discover the journey, education, tech stack, and professional experience of Aswinsai Palakonda — Full Stack Developer, Co-founder & CTO at Clientura, and AI Enthusiast."
         canonical="https://aswinsai.tech/about"
+        keywords="About Aswinsai Palakonda, Full Stack Developer journey, education, tech stack, skills, Clientura CTO, software developer India, developer biography"
+        schema={aboutSchemas}
       />
       
       <main className="grow">
@@ -20,17 +46,19 @@ export const AboutPage = () => {
         <AboutHero />
 
         {/* Education Section */}
-        <div id="education-about" className="bg-[#050505]">
+        <section id="education-about" className="bg-[#050505]" aria-label="Education">
            <Education />
-        </div>
+        </section>
 
         {/* Tech Stack (Relocated from Home) */}
-        <TechStack />
+        <section aria-label="Technology Stack">
+          <TechStack />
+        </section>
 
         {/* Testimonials Section - Unique 3D Interaction */}
-        <div id="testimonials-about" className="bg-[#050505]">
+        <section id="testimonials-about" className="bg-[#050505]" aria-label="Client Testimonials">
           <AboutTestimonials />
-        </div>
+        </section>
 
         <CallToAction />
       </main>
