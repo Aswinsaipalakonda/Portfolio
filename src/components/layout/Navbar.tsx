@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'framer-motion';
-import { useLenisContext } from '../providers/LenisProvider';
+import { useLenisContext } from '../../providers/LenisProvider';
 import { 
   Home, 
   User, 

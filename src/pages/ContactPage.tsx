@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 import { ContactForm } from '../components/Contact/ContactForm';
 import { RotatingGlobe } from '../components/Contact/RotatingGlobe';
-import { Footer } from '../components/Contact/Footer';
-import { SEOHead } from '../components/SEOHead';
+import { Footer } from '../components/layout/Footer';
+import { SEOHead } from '../components/Shared/SEOHead';
 
 export const ContactPage = () => {
   const breadcrumbSchema = {

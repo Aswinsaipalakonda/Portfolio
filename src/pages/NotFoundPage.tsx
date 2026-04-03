@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Home, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { SEOHead } from '../components/SEOHead';
+import { SEOHead } from '../components/Shared/SEOHead';
 
 export function NotFoundPage() {
   return (

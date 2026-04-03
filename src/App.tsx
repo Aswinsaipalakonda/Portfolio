@@ -1,18 +1,18 @@
 import React, { useState, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Navbar } from './components/Navbar';
-import { Content } from './components/Content';
+import { Navbar } from './components/layout/Navbar';
+import { HomePage } from './pages/HomePage';
 import { ContactPage } from './pages/ContactPage';
 import { CertificatesPage } from './pages/CertificatesPage';
 import { AboutPage } from './pages/AboutPage';
 import { NotFoundPage } from './pages/NotFoundPage';
-import { SplashScreen } from './components/SplashScreen';
-import { ScrollToTop } from './components/ScrollToTop';
+import { SplashScreen } from './components/Shared/SplashScreen';
+import { ScrollToTop } from './components/Shared/ScrollToTop';
 
 // Super-charge Mobile PageSpeed by deferring heavy WebGL/ThreeJS chunks
 const Canvas = lazy(() => import('@react-three/fiber').then(module => ({ default: module.Canvas })));
-const Space = lazy(() => import('./components/Space').then(module => ({ default: module.Space as React.ComponentType<{ starCount?: number }> })));
+const Space = lazy(() => import('./components/Shared/Space').then(module => ({ default: module.Space as React.ComponentType<{ starCount?: number }> })));
 
 function AppContent() {
   // Only show splash screen initially if on the home page
@@ -45,7 +45,7 @@ function AppContent() {
             </div>
             
             <Routes>
-              <Route path="/" element={<Content />} />
+              <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/certificates" element={<CertificatesPage />} />
               <Route path="/contact" element={<ContactPage />} />

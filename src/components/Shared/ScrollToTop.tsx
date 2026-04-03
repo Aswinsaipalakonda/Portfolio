@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useLenisContext } from '../providers/LenisProvider';
+import { useLenisContext } from '../../providers/LenisProvider';
 
 export const ScrollToTop = () => {
   const { pathname, hash } = useLocation();

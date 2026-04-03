@@ -1,9 +1,9 @@
-import { SEOHead } from '../components/SEOHead';
-import { Footer } from '../components/Contact/Footer';
-import { AboutHero } from '../components/About/AboutHero';
+import { SEOHead } from '../components/Shared/SEOHead';
+import { Footer } from '../components/layout/Footer';
+import { AboutHero } from '../components/About/Hero';
 import { Education } from '../components/Education/Education';
-import { Languages } from '../components/Languages';
-import { AboutTestimonials } from '../components/About/AboutTestimonials';
+import { TechStack } from '../components/About/TechStack';
+import { AboutTestimonials } from '../components/About/Testimonials';
 import { CallToAction } from '../components/Shared/CallToAction';
 
 export const AboutPage = () => {
@@ -25,7 +25,7 @@ export const AboutPage = () => {
         </div>
 
         {/* Tech Stack (Relocated from Home) */}
-        <Languages />
+        <TechStack />
 
         {/* Testimonials Section - Unique 3D Interaction */}
         <div id="testimonials-about" className="bg-[#050505]">

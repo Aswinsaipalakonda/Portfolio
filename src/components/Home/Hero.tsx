@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FlipWords } from "@/components/ui/flip-words";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
-export const About = () => {
+export const HomeHero = () => {
   const roles = [
     'Full Stack Developer',
     'No-Code Developer',
@@ -60,12 +60,6 @@ export const About = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
           >
-            <Link
-              to="/contact"
-              className="px-9 py-3.5 rounded-full bg-linear-to-r from-[#915EFF] to-purple-600 text-white font-bold hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-300 transform hover:scale-105 flex items-center justify-center text-center shadow-lg active:scale-95"
-            >
-              Hire Me
-            </Link>
             <Link
               to="/about"
               className="px-9 py-3.5 rounded-full border border-white/20 bg-white/5 text-white font-bold hover:bg-white/10 transition-all duration-300 transform hover:scale-105 flex items-center justify-center text-center shadow-lg active:scale-95"

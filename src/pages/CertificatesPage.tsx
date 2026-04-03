@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { certificatesData } from '../data/certificates';
 import { CertificateCard } from '../components/Certificates/CertificateCard';
 import { CertificateModal } from '../components/Certificates/CertificateModal';
-import { SEOHead } from '../components/SEOHead';
-import { Footer } from '../components/Contact/Footer';
+import { SEOHead } from '../components/Shared/SEOHead';
+import { Footer } from '../components/layout/Footer';
 import { CallToAction } from '../components/Shared/CallToAction';
 
 export const CertificatesPage = () => {

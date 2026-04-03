@@ -125,7 +125,7 @@ const OrbitingSkill = ({ config, angle }: { config: SkillConfig, angle: number }
     );
 };
 
-export const Languages: React.FC = () => {
+export const TechStack: React.FC = () => {
     const [time, setTime] = useState(0);
 
     useEffect(() => {

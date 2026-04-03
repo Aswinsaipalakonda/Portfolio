@@ -7,7 +7,7 @@ const testimonials = [
     name: "Rainbucks",
     role: "Digital Course Marketplace",
     content: "The digital marketplace Aswinsai built for us is seamless. The automated delivery system and intuitive dashboards have transformed how we handle our digital courses. What surprised us most was how quickly our team adapted to it. Minimal learning curve, excellent technical architecture, and powerful features make it a must-have for our growing business.",
-    image: "/assets/rainbuck.jpeg",
+    image: "/assets/logos/rainbucks.png",
     platform: "E-Commerce",
   },
   {
@@ -15,7 +15,7 @@ const testimonials = [
     name: "Clientura",
     role: "Digital Marketing Agency",
     content: "As our CTO, Aswinsai's technical vision for Clientura has been instrumental. He delivered a robust onboarding system that our clients love. Our productivity has nearly doubled since onboarding the custom dashboards. He removed repetitive tasks, allowing our team to focus on building instead of managing operations.",
-    image: "/assets/clientur.jpeg",
+    image: "/assets/logos/clientura.png",
     platform: "Agency",
   },
   {
@@ -23,7 +23,7 @@ const testimonials = [
     name: "Infinity Globals",
     role: "Abroad Consultancy",
     content: "Our consultancy platform is now a powerhouse for student engagement thanks to Aswinsai's work on dynamic course listings and lead management. We evaluated multiple solutions, but this custom build stood out immediately. It's fast, scalable, and thoughtfully designed for growing teams that need stability without added complexity.",
-    image: "/assets/infinit.jpeg",
+    image: "/assets/logos/infiniti.png",
     platform: "Education",
   },
   {
@@ -31,7 +31,7 @@ const testimonials = [
     name: "Homessy Platform",
     role: "Multi-Service Delivery",
     content: "The scalability of the Homessy platform exceeded our expectations. The integration of grocery and home services is flawless. The technical architecture handles concurrent users and service bookings effortlessly. It's rare to find developers who understand both high-level business goals and complex system integration so well.",
-    image: "/assets/homess.jpeg",
+    image: "/assets/logos/homessy.png",
     platform: "SaaS",
   }
 ];
@@ -98,7 +98,7 @@ export const AboutTestimonials = () => {
         </p>
       </div>
 
-      <div className="relative flex h-[400px] md:h-[500px] w-full max-w-6xl mx-auto flex-col items-center justify-center overflow-hidden bg-transparent md:flex-row [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+      <div className="relative flex h-[400px] md:h-[500px] w-full max-w-6xl mx-auto flex-col items-center justify-center overflow-hidden bg-transparent md:flex-row mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
         
         {/* First Column - Scrolls Up */}
         <Marquee pauseOnHover vertical className="[--duration:35s]" repeat={4}>
