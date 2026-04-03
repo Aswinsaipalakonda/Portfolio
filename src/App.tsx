@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Navbar } from './components/Navbar';
 import { Content } from './components/Content';
 import { ContactPage } from './pages/ContactPage';
+import { CertificatesPage } from './pages/CertificatesPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { SplashScreen } from './components/SplashScreen';
 import { ScrollToTop } from './components/ScrollToTop';
@@ -19,7 +20,7 @@ function AppContent() {
   const [loading, setLoading] = useState(window.location.pathname === '/');
   
   const location = useLocation();
-  const is404 = location.pathname !== '/' && location.pathname !== '/contact';
+  const is404 = location.pathname !== '/' && location.pathname !== '/contact' && location.pathname !== '/certificates';
 
   return (
     <div className="relative min-h-screen bg-black w-full max-w-full overflow-x-clip">
@@ -46,6 +47,7 @@ function AppContent() {
             
             <Routes>
               <Route path="/" element={<Content />} />
+              <Route path="/certificates" element={<CertificatesPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
