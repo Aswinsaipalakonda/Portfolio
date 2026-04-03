@@ -1,13 +1,12 @@
 import { About } from './About';
 import { Skills } from './Skills/Skills';
-import { Languages } from './Languages';
 import { Experience } from './Experience/Experience';
 import { Projects } from './Projects/Projects';
 import { Certificates } from './Certificates/Certificates';
+import { CallToAction } from './Shared/CallToAction';
 
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { SEOHead } from './SEOHead';
-import { CallToAction } from './Shared/CallToAction';
 
 export const Content = () => {
   return (
@@ -20,7 +19,6 @@ export const Content = () => {
         <About />
       </section>
       <Skills />
-      <Languages />
       <Experience />
       <Projects />
       <Certificates />

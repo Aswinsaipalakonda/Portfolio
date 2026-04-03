@@ -85,7 +85,6 @@ export const Navbar = () => {
   const navLinks = [
     { name: 'Home', path: '/', icon: <Home className="w-4 h-4" /> },
     { name: 'About', path: '/about', icon: <User className="w-4 h-4" /> },
-    { name: 'Experience', path: 'experience', icon: <Briefcase className="w-4 h-4" /> },
     { name: 'Projects', path: 'projects', icon: <Code2 className="w-4 h-4" /> },
     { name: 'Certificates', path: '/certificates', icon: <Award className="w-4 h-4" /> },
   ];
@@ -145,7 +144,7 @@ export const Navbar = () => {
             to="/" 
             onClick={(e) => {
               e.preventDefault();
-              handleLinkClick('hero');
+              handleLinkClick('/');
             }}
             className="text-white text-base font-extrabold tracking-tight"
           >
@@ -169,7 +168,7 @@ export const Navbar = () => {
             to="/" 
             onClick={(e) => {
               e.preventDefault();
-              handleLinkClick('hero');
+              handleLinkClick('/');
             }}
             className="text-white text-xl font-bold tracking-tighter hover:text-[#915EFF] transition-colors shrink-0"
           >

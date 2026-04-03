@@ -2,7 +2,7 @@ import { SEOHead } from '../components/SEOHead';
 import { Footer } from '../components/Contact/Footer';
 import { AboutHero } from '../components/About/AboutHero';
 import { Education } from '../components/Education/Education';
-import { AboutSkills } from '../components/About/AboutSkills';
+import { Languages } from '../components/Languages';
 import { AboutTestimonials } from '../components/About/AboutTestimonials';
 import { CallToAction } from '../components/Shared/CallToAction';
 
@@ -24,10 +24,8 @@ export const AboutPage = () => {
            <Education />
         </div>
 
-        {/* Skills Section - Unique Bento Grid */}
-        <div id="skills-about" className="bg-[#050505]">
-          <AboutSkills />
-        </div>
+        {/* Tech Stack (Relocated from Home) */}
+        <Languages />
 
         {/* Testimonials Section - Unique 3D Interaction */}
         <div id="testimonials-about" className="bg-[#050505]">

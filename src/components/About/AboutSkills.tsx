@@ -1,183 +1,148 @@
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import React, { useState } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
 
-const technicalSkills = {
-  Frontend: [
-    { name: 'React.js', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg' },
-    { name: 'Next.js', icon: 'https://www.vectorlogo.zone/logos/nextjs/nextjs-icon.svg' },
-    { name: 'TypeScript', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg' },
-    { name: 'Tailwind CSS', icon: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg' },
-  ],
-  Backend: [
-    { name: 'Node.js', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg' },
-    { name: 'MongoDB', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg' },
-    { name: 'PostgreSQL', icon: 'https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg' },
-    { name: 'Python', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg' },
-  ],
-  DevOps: [
-    { name: 'AWS', icon: 'https://www.logo.wine/a/logo/Amazon_Web_Services/Amazon_Web_Services-Logo.wine.svg' },
-    { name: 'Vercel', icon: 'https://favicons.statusgator.com/vercel.png' },
-    { name: 'GitHub', icon: 'https://www.vectorlogo.zone/logos/github/github-icon.svg' },
-  ],
-  Others: [
-    { name: 'Figma', icon: 'https://www.vectorlogo.zone/logos/figma/figma-icon.svg' },
-    { name: 'Framer', icon: 'https://www.vectorlogo.zone/logos/framer/framer-icon.svg' },
-    { name: 'WordPress', icon: 'https://www.vectorlogo.zone/logos/wordpress/wordpress-icon.svg' },
-  ]
-};
-
-const SkillCard = ({ title, skills, color, className }: { title: string, skills: any[], color: string, className?: string }) => {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
-
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
-    x.set(xPct);
-    y.set(yPct);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
-
-  return (
-    <motion.div
-      style={{
-        rotateX,
-        rotateY,
-        transformStyle: "preserve-3d",
-      }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className={`relative rounded-[2.5rem] p-8 border border-white/10 bg-black/40 backdrop-blur-3xl overflow-hidden group shadow-2xl ${className}`}
-    >
-      <div 
-        className="absolute inset-x-0 bottom-0 h-1 z-20 transition-all duration-500 group-hover:h-full opacity-20 pointer-events-none"
-        style={{ backgroundColor: color }}
-      />
-      
-      {/* Glossy Overlay */}
-      <div className="absolute inset-0 bg-linear-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-      
-      <div style={{ transform: "translateZ(50px)" }} className="relative z-30">
-        <h3 className="text-3xl font-black text-white mb-8 tracking-tighter uppercase">{title}</h3>
-        
-        <div className="flex flex-wrap gap-4">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, scale: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              className="flex items-center gap-3 p-3 px-5 rounded-2xl bg-white/5 border border-white/10 shadow-lg"
-            >
-              <img src={skill.icon} alt={skill.name} className="w-6 h-6 object-contain" />
-              <span className="text-gray-200 text-sm font-bold">{skill.name}</span>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-
-      {/* Floating Sparkles/Particles effect (CSS only) */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none z-10 group-hover:opacity-40 transition-opacity">
-        <div className="absolute top-10 left-10 w-2 h-2 rounded-full bg-white animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-1 h-1 rounded-full bg-white animate-ping" />
-        <div className="absolute top-1/2 left-1/4 w-1.5 h-1.5 rounded-full bg-white animate-bounce" />
-      </div>
-    </motion.div>
-  );
-};
+const allSkills = [
+  { name: 'React.js', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg' },
+  { name: 'Next.js', icon: 'https://www.vectorlogo.zone/logos/nextjs/nextjs-icon.svg'},
+  { name: 'TypeScript', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg'},
+  { name: 'Tailwind CSS', icon: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg'},
+  { name: 'Node.js', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg' },
+  { name: 'Python', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg' },
+  { name: 'MongoDB', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg' },
+  { name: 'PostgreSQL', icon: 'https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg'},
+  { name: 'AWS', icon: 'https://www.logo.wine/a/logo/Amazon_Web_Services/Amazon_Web_Services-Logo.wine.svg' },
+  { name: 'Firebase', icon: 'https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg' },
+  { name: 'Figma', icon: 'https://www.vectorlogo.zone/logos/figma/figma-icon.svg' },
+  { name: 'GitHub', icon: 'https://www.vectorlogo.zone/logos/github/github-icon.svg' },
+  { name: 'Framer', icon: 'https://www.vectorlogo.zone/logos/framer/framer-icon.svg' },
+  { name: 'JavaScript', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg' },
+];
 
 export const AboutSkills = () => {
   return (
-    <section className="py-32 px-4 sm:px-8 max-w-7xl mx-auto overflow-hidden">
-      <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
-        <motion.div
-           initial={{ opacity: 0, x: -50 }}
-           whileInView={{ opacity: 1, x: 0 }}
-           transition={{ duration: 0.8 }}
-           className="max-w-2xl"
+    <section className="py-32 px-4 relative overflow-hidden flex flex-col items-center justify-center min-h-[900px]">
+      {/* Background Decorative Elements */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#915EFF]/10 blur-[150px] rounded-full animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 blur-[150px] rounded-full animate-pulse delay-1000" />
+      </div>
+
+      <div className="text-center mb-20 z-10">
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="text-[#915EFF] text-sm font-black uppercase tracking-[0.4em] mb-4"
         >
-          <h2 className="text-5xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter leading-none">
-            Digital <br />
-            <span className="text-[#915EFF]">Craftsmanship</span>
-          </h2>
-          <p className="text-gray-400 text-lg md:text-xl font-medium leading-relaxed">
-            I don't just write code; I architect experiences. My stack is a curated collection of industry-leading technologies optimized for performance and beauty.
-          </p>
-        </motion.div>
-        
+          Technology Infrastructure
+        </motion.p>
+        <motion.h2 
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter"
+        >
+          The <span className="text-transparent bg-clip-text bg-linear-to-r from-[#915EFF] to-blue-500">Tech Core</span>
+        </motion.h2>
+      </div>
+
+      {/* 3D Container */}
+      <div className="relative w-full max-w-4xl h-[600px] flex items-center justify-center perspective-[2000px]">
+        {/* Central Pulsing Sphere */}
         <motion.div 
-           initial={{ opacity: 0, x: 50 }}
-           whileInView={{ opacity: 1, x: 0 }}
-           transition={{ duration: 0.8 }}
-           className="flex gap-4 pb-2"
+           animate={{ 
+             scale: [1, 1.1, 1],
+             boxShadow: [
+               "0 0 40px rgba(145, 94, 255, 0.2)",
+               "0 0 100px rgba(145, 94, 255, 0.4)",
+               "0 0 40px rgba(145, 94, 255, 0.2)"
+             ]
+           }}
+           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+           className="relative z-30 w-40 h-40 md:w-56 md:h-56 rounded-full border border-white/20 bg-linear-to-br from-[#1a1443] to-black flex items-center justify-center backdrop-blur-3xl overflow-hidden"
         >
-          <div className="h-12 w-12 rounded-full border border-white/10 flex items-center justify-center bg-white/5 backdrop-blur-xl animate-bounce">
-            <div className="h-2 w-2 rounded-full bg-[#915EFF]" />
+          {/* Internal Wireframe/Glow effect */}
+          <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#915EFF] via-transparent to-transparent animate-pulse" />
+          <div className="absolute inset-4 rounded-full border border-dashed border-[#915EFF]/30 animate-[spin_12s_linear_infinite]" />
+          <div className="absolute inset-8 rounded-full border border-dotted border-[#915EFF]/50 animate-[spin_8s_linear_infinite_reverse]" />
+          
+          <div className="relative z-10 text-center">
+            <span className="text-white font-black text-2xl md:text-3xl tracking-widest uppercase">CORE</span>
+            <div className="h-1 w-12 bg-[#915EFF] mx-auto mt-2" />
           </div>
-          <span className="text-white text-sm font-black uppercase tracking-[0.2em] mt-4">Tools of Choice</span>
         </motion.div>
+
+        {/* Orbiting Icons */}
+        <div className="absolute inset-0 pointer-events-none">
+          {allSkills.map((skill, index) => {
+            const count = allSkills.length;
+            const angle = (index / count) * 2 * Math.PI;
+            const radiusX = 250 + (index % 3) * 40; // Variable orbits
+            const radiusY = 120 + (index % 2) * 50;
+            const duration = 15 + (index % 5) * 5; // Differing speeds
+            
+            return (
+              <motion.div
+                key={skill.name}
+                animate={{
+                  rotate: 360,
+                  transition: { duration, repeat: Infinity, ease: "linear" }
+                }}
+                className="absolute top-1/2 left-1/2 w-0 h-0"
+                style={{ 
+                   transformOrigin: "center center",
+                }}
+              >
+                <motion.div
+                   animate={{
+                      rotate: -360,
+                      transition: { duration, repeat: Infinity, ease: "linear" }
+                   }}
+                   className="pointer-events-auto"
+                   style={{
+                     transform: `translate(${radiusX}px, ${radiusY}px)`,
+                   }}
+                >
+                  <motion.div 
+                    whileHover={{ scale: 1.5, z: 50, filter: "brightness(1.5)" }}
+                    className="flex items-center gap-3 p-3 rounded-2xl bg-black/60 border border-white/10 shadow-2xl backdrop-blur-xl group hover:border-[#915EFF]/50 transition-all cursor-pointer"
+                  >
+                    <img 
+                      src={skill.icon} 
+                      alt={skill.name} 
+                      className="w-8 h-8 object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] group-hover:drop-shadow-[0_0_15px_#915EFF]" 
+                    />
+                    <span className="text-white text-[10px] font-black uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                      {skill.name}
+                    </span>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Dynamic Connecting Lines (Visual Fake) */}
+        <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-dashed border-[#915EFF]/20 rounded-full animate-[spin_20s_linear_infinite]" />
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] border border-dashed border-[#915EFF]/10 rounded-full animate-[spin_30s_linear_infinite_reverse]" />
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 auto-rows-[minmax(300px,auto)]">
-        {/* Frontend - Wide Impact */}
-        <div className="md:col-span-8">
-          <SkillCard 
-            title="Frontend Engineering" 
-            skills={technicalSkills.Frontend} 
-            color="#915EFF"
-            className="h-full border-[#915EFF]/20"
-          />
-        </div>
-
-        {/* DevOps - Compact Square */}
-        <div className="md:col-span-4">
-          <SkillCard 
-            title="Infrastructure" 
-            skills={technicalSkills.DevOps} 
-            color="#10b981"
-            className="h-full border-green-500/20"
-          />
-        </div>
-
-        {/* Backend - Tall Sidebar Style */}
-        <div className="md:col-span-5">
-           <SkillCard 
-            title="Performance Systems" 
-            skills={technicalSkills.Backend} 
-            color="#3b82f6"
-            className="h-full border-blue-500/20"
-          />
-        </div>
-
-        {/* Others - Wide Bottom */}
-        <div className="md:col-span-7">
-          <SkillCard 
-            title="Creative Utilities" 
-            skills={technicalSkills.Others} 
-            color="#f43f5e"
-            className="h-full border-rose-500/20"
-          />
-        </div>
+      <div className="mt-12 flex items-center gap-8 z-10">
+         <div className="flex -space-x-3">
+            {[1, 2, 3, 4].map((i) => (
+               <div key={i} className="w-8 h-8 rounded-full border-2 border-black bg-gray-900 flex items-center justify-center overflow-hidden">
+                  <div className="w-full h-full bg-linear-to-br from-[#915EFF] to-transparent opacity-50" />
+               </div>
+            ))}
+         </div>
+         <p className="text-gray-400 text-sm font-bold tracking-widest uppercase">Multi-Stack Expertise <span className="text-white ml-2">2024</span></p>
       </div>
 
-      {/* Background Decorative Gradient */}
-      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] bg-[#915EFF]/5 blur-[200px] rounded-full -z-10 pointer-events-none" />
+      <style>{`
+        .transform-style-3d {
+          transform-style: preserve-3d;
+        }
+      `}</style>
     </section>
   );
 };
