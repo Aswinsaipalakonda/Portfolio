@@ -54,7 +54,7 @@ const projects = [
   {
   title: 'Right Overseas Solutions',
   description: 'Designed and developed a high-conversion overseas education and immigration consultancy website with structured service architecture, country-specific landing flows, and optimized lead capture system. Focused on credibility positioning, consultation booking funnels, and trust-driven UI design.',
-  image: '/assets/oversea.jpeg',
+image: '/assets/oversea.jpeg',
   date: '2025',
   demoLink: 'https://rightoverseassolutions.com',
   techStack: ['Next.js', 'Motion', 'Tailwind CSS', 'LeadGen']
