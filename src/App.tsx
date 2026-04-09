@@ -2,10 +2,11 @@ import React, { useState, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Navbar } from './components/layout/Navbar';
+import { SEOHead } from './components/Shared/SEOHead';
 import { SplashScreen } from './components/Shared/SplashScreen';
 import { ScrollToTop } from './components/Shared/ScrollToTop';
 
-// Code-split pages — each page loads only when navigated to (reduces initial ~381KB bundle)
+// Code-split pages — each page loads only when navigated to
 const HomePage = lazy(() => import('./pages/HomePage').then(m => ({ default: m.HomePage })));
 const ContactPage = lazy(() => import('./pages/ContactPage').then(m => ({ default: m.ContactPage })));
 const CertificatesPage = lazy(() => import('./pages/CertificatesPage').then(m => ({ default: m.CertificatesPage })));
@@ -32,6 +33,11 @@ function AppContent() {
 
   return (
     <div className="relative min-h-screen bg-black w-full max-w-full overflow-x-clip">
+      <SEOHead 
+        title="Aswinsai Palakonda | Full Stack Developer & CTO at Clientura"
+        description="Professional portfolio of Aswinsai Palakonda — Full Stack Developer, Co-founder & CTO at Clientura. Expert in React, TypeScript, Node.js, and AI."
+        canonical={`https://aswinsai.tech${location.pathname === '/' ? '' : location.pathname}`}
+      />
       <AnimatePresence mode="wait">
         {loading ? (
           <SplashScreen key="splash" onComplete={() => setLoading(false)} />

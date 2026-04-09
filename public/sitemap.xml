@@ -6,11 +6,11 @@
 >
   <!-- Homepage (highest priority) -->
   <url>
-    <loc>https://aswinsai.tech/</loc>
+    <loc>https://aswinsai.tech</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aswinsai.tech/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://aswinsai.tech" />
     <image:image>
       <image:loc>https://aswinsai.tech/assets/images/aswin.jpg</image:loc>
       <image:title>Aswinsai Palakonda — Full Stack Developer</image:title>
