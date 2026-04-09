@@ -10,7 +10,7 @@ export const AboutHero = () => {
   };
 
   return (
-    <section className="relative w-full h-dvh bg-[#050505] overflow-hidden flex flex-col pt-40 md:pt-48 lg:pt-56">
+    <section className="relative w-full h-dvh bg-[#050505] overflow-hidden flex flex-col pt-48 md:pt-64 lg:pt-50">
       
       {/* 1. Background Content Layer (Perfect Image Blending) */}
       <div className="absolute inset-0 z-0 flex items-center justify-center bg-[#050505]">
@@ -71,7 +71,7 @@ export const AboutHero = () => {
         </div>
 
         {/* --- Bottom Row: Socials & Role --- */}
-        <div className="mt-auto w-full flex flex-col md:flex-row justify-between items-end pb-8">
+        <div className="mt-auto w-full flex flex-col md:flex-row justify-between items-end pb-16 md:pb-24">
           
           {/* Bottom Left: Minimal Social Links */}
           <div className="flex flex-col gap-6">
@@ -119,17 +119,6 @@ export const AboutHero = () => {
           </motion.div>
         </div>
 
-        {/* --- Bottom Center: Portfolio Content --- */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 1 }}
-          className="w-full pt-8 flex justify-center border-t border-white/5"
-        >
-          <p className="text-white/30 text-[10px] md:text-[11px] font-light tracking-[0.2em] leading-relaxed uppercase max-w-4xl text-center">
-            Architecting digital backends & shaping visual experiences.
-          </p>
-        </motion.div>
       </div>
 
       {/* Explore Indicator */}
@@ -137,7 +126,7 @@ export const AboutHero = () => {
         animate={{ y: [0, 6, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
         onClick={scrollToNext}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 opacity-20 hover:opacity-100 transition-all group flex flex-col items-center gap-2 cursor-pointer"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 opacity-20 hover:opacity-100 transition-all group flex flex-col items-center gap-2 cursor-pointer"
       >
         <span className="text-[9px] tracking-[0.5em] text-white uppercase font-light">Explore</span>
         <ArrowDown className="w-5 h-5 text-[#c5a36b]" />
