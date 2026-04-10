@@ -88,7 +88,7 @@ export const Footer = () => {
       
       {/* Copyright */}
       <p className="text-gray-500 text-sm text-center">
-        © {currentYear} Aswinsai Palakonda. All rights reserved. Built with React, TypeScript & ❤️
+        © {currentYear} Aswinsai Palakonda ❤️. All rights reserved.
       </p>
     </footer>
   );
