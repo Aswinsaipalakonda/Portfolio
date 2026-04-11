@@ -1,6 +1,6 @@
 export const certificatesData = [
   {
-    title: "IEEE Sustainable Solutions for Humanity",
+    title: "IEEE Sustainable Solutions",
     issuer: "IEEE Region 10",
     date: "Sept 2024",
     imageUrl: "/assets/images/IEE.jpeg"
