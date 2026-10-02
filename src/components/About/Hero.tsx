@@ -20,7 +20,7 @@ export const AboutHero = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2 }}
             src="/assets/images/aswin-hero-creative.png" 
-            alt="Aswinsai Palakonda" 
+            alt="Palakonda Aswinsai" 
             className="h-full w-auto object-contain pointer-events-none"
           />
           {/* Edge Shadows to blend square image with background */}
@@ -45,8 +45,8 @@ export const AboutHero = () => {
             className="flex flex-col select-none"
           >
             <h2 className="text-[#c5a36b] font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tighter uppercase font-black leading-[0.85] drop-shadow-lg text-left">
-              Aswinsai <br />
-              <span className="text-white">Palakonda</span>
+              Palakonda <br />
+              <span className="text-white">Aswinsai</span>
             </h2>
             <div className="hidden md:flex items-center gap-3 md:gap-4 mt-6 md:mt-8">
               <div className="h-px w-8 md:w-10 bg-[#c5a36b]/80" />

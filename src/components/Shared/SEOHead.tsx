@@ -7,7 +7,7 @@ interface SEOHeadProps {
   ogImage?: string;
   ogType?: string;
   twitterCard?: string;
-  schema?: Record<string, any> | Record<string, any>[];
+  schema?: Record<string, unknown> | Record<string, unknown>[];
   noindex?: boolean;
   keywords?: string;
   articlePublished?: string;
@@ -15,7 +15,7 @@ interface SEOHeadProps {
 }
 
 const SITE_URL = 'https://aswinsai.tech';
-const SITE_NAME = 'Aswinsai Palakonda — Full Stack Developer';
+const SITE_NAME = 'Palakonda Aswinsai — Full Stack Developer';
 const DEFAULT_IMAGE = `${SITE_URL}/assets/images/aswin.jpg`;
 const TWITTER_HANDLE = '@aswinsai';
 
@@ -69,7 +69,7 @@ export const SEOHead = ({
       {/* Article-specific OG tags */}
       {articlePublished && <meta property="article:published_time" content={articlePublished} />}
       {articleModified && <meta property="article:modified_time" content={articleModified} />}
-      {ogType === 'article' && <meta property="article:author" content="Aswinsai Palakonda" />}
+      {ogType === 'article' && <meta property="article:author" content="Palakonda Aswinsai" />}
 
       {/* Twitter — X.com cards */}
       <meta name="twitter:card" content={twitterCard} />

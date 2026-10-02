@@ -20,8 +20,8 @@ export const ContactPage = () => {
     {
       "@context": "https://schema.org",
       "@type": "ContactPage",
-      "name": "Contact Aswinsai Palakonda",
-      "description": "Get in touch with Aswinsai Palakonda for freelance projects, collaborations, full-time opportunities, and technical consulting.",
+      "name": "Contact Palakonda Aswinsai",
+      "description": "Get in touch with Palakonda Aswinsai for freelance projects, collaborations, full-time opportunities, and technical consulting.",
       "url": "https://aswinsai.tech/contact",
       "isPartOf": { "@id": "https://aswinsai.tech/#website" },
       "mainEntity": {
@@ -41,8 +41,8 @@ export const ContactPage = () => {
   return (
     <div className="relative z-10 min-h-screen pt-20">
       <SEOHead
-        title="Contact Aswinsai Palakonda | Hire Full Stack Developer"
-        description="Get in touch with Aswinsai Palakonda — available for freelance projects, full-time opportunities, technical consulting, and web development collaborations. React, Next.js, TypeScript expert."
+        title="Contact Palakonda Aswinsai | Hire Full Stack Developer"
+        description="Get in touch with Palakonda Aswinsai — available for freelance projects, full-time opportunities, technical consulting, and web development collaborations. React, Next.js, TypeScript expert."
         canonical="https://aswinsai.tech/contact"
         keywords="Contact Aswinsai, Hire Full Stack Developer, Freelance Web Developer India, React Developer for hire, Web Development Services, Technical Consulting"
         schema={contactSchemas}

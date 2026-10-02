@@ -78,7 +78,7 @@ export const Navbar = () => {
   const navPaddingY = useTransform(scrollY, scrollRange, ['24px', '12px']);
 
   const smoothHeaderPadding = useSpring(headerPadding, springConfig);
-  const smoothNavMaxWidth = useSpring(navMaxWidthTransition as any, springConfig);
+  const smoothNavMaxWidth = useSpring(navMaxWidthTransition, springConfig);
   const smoothNavPaddingX = useSpring(navPaddingX, springConfig);
   const smoothNavPaddingY = useSpring(navPaddingY, springConfig);
 

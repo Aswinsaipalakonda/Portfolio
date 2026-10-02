@@ -3,6 +3,7 @@ import Lenis from "lenis";
 
 const LenisContext = createContext<{ lenis: Lenis | null }>({ lenis: null });
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useLenisContext = () => useContext(LenisContext);
 
 export const LenisProvider = ({ children }: { children: React.ReactNode }) => {

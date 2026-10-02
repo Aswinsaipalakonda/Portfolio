@@ -2,7 +2,7 @@
   <img src="public/assets/icons/android-chrome-512x512.png" alt="Aswinsai Logo" width="100" />
 </p>
 
-<h1 align="center">🚀 Aswinsai Palakonda — Portfolio</h1>
+<h1 align="center">🚀 Palakonda Aswinsai — Portfolio</h1>
 
 <p align="center">
   <b>Full Stack Developer • No-Code Developer • AI Enthusiast</b>
@@ -49,7 +49,7 @@ A **modern, immersive** personal portfolio website built with cutting-edge web t
 | 🧈 **Lenis Smooth Scroll**  | Buttery smooth scrolling with spring-based easing curves                    |
 | 🎞️ **Framer Motion**        | Page transitions, scroll-triggered reveals, and micro-interactions          |
 | 📱 **Fully Responsive**     | Pixel-perfect on mobile, tablet, and desktop                                |
-| 📬 **Contact Page**         | Dedicated contact page with email form powered by EmailJS                   |
+| 📬 **Contact Page**         | Dedicated contact page with email form powered by Resend                    |
 | 🌍 **3D Globe**             | Rotating globe in the Contact section                                       |
 | ⌨️ **Flip Words Effect**    | Dynamic role cycling in the hero section                                    |
 | 📄 **Resume Download**      | One-click resume view in a new tab                                          |
@@ -72,7 +72,7 @@ A **modern, immersive** personal portfolio website built with cutting-edge web t
 | ![Three.js](https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=threedotjs&logoColor=white)          | 3D graphics & space background              |
 | ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white)    | Animations & page transitions               |
 | ![Lenis](https://img.shields.io/badge/Lenis-000000?style=flat-square&logoColor=white)                                | Smooth scrolling engine                     |
-| ![EmailJS](https://img.shields.io/badge/EmailJS-FC0?style=flat-square&logoColor=black)                               | Client-side email service                   |
+| ![Resend](https://img.shields.io/badge/Resend-000000?style=flat-square&logo=resend&logoColor=white)                   | Modern email delivery API                   |
 | ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=flat-square&logo=reactrouter&logoColor=white) | Client-side routing & navigation            |
 
 ---
@@ -243,5 +243,5 @@ This project is open source and available under the [MIT License](LICENSE).
 </p>
 
 <p align="center">
-  Made with 💜 by <a href="https://github.com/Aswinsaipalakonda"><b>Aswinsai Palakonda</b></a>
+  Made with 💜 by <a href="https://github.com/Aswinsaipalakonda"><b>Palakonda Aswinsai</b></a>
 </p>

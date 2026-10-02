@@ -28,7 +28,7 @@ export const HomeHero = () => {
             Hi, I am
             <br />
             <span className="bg-linear-to-r from-[#915EFF] via-purple-400 to-[#915EFF] bg-clip-text text-transparent">
-              Aswinsai Palakonda
+              Palakonda Aswinsai
             </span>
           </motion.h1>
           
@@ -100,12 +100,11 @@ export const HomeHero = () => {
             <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-[#915EFF] shadow-2xl shadow-purple-500/30">
               <img
                 src="/assets/images/aswin.jpg"
-                alt="Aswinsai Palakonda - Full Stack Developer and CTO at Clientura"
+                alt="Palakonda Aswinsai - Full Stack Developer and CTO at Clientura"
                 width="400"
                 height="400"
                 className="w-full h-full object-cover"
                 loading="eager"
-                fetchPriority="high"
                 decoding="async"
               />
             </div>

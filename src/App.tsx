@@ -34,8 +34,8 @@ function AppContent() {
   return (
     <div className="relative min-h-screen bg-black w-full max-w-full overflow-x-clip">
       <SEOHead 
-        title="Aswinsai Palakonda | Full Stack Developer & CTO at Clientura"
-        description="Professional portfolio of Aswinsai Palakonda — Full Stack Developer, Co-founder & CTO at Clientura. Expert in React, TypeScript, Node.js, and AI."
+        title="Palakonda Aswinsai | Full Stack Developer & CTO at Clientura"
+        description="Professional portfolio of Palakonda Aswinsai — Full Stack Developer, Co-founder & CTO at Clientura. Expert in React, TypeScript, Node.js, and AI."
         canonical={`https://aswinsai.tech${location.pathname === '/' ? '' : location.pathname}`}
       />
       <AnimatePresence mode="wait">

@@ -21,8 +21,8 @@ export const HomePage = () => {
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "Aswinsai Palakonda — Full Stack Developer Portfolio",
-      "description": "Explore the portfolio of Aswinsai Palakonda, a Full Stack Developer and Co-founder & CTO at Clientura. View projects, experience, certifications, and more.",
+      "name": "Palakonda Aswinsai — Full Stack Developer Portfolio",
+      "description": "Explore the portfolio of Palakonda Aswinsai, a Full Stack Developer and Co-founder & CTO at Clientura. View projects, experience, certifications, and more.",
       "url": "https://aswinsai.tech",
       "isPartOf": { "@id": "https://aswinsai.tech/#website" },
       "about": { "@id": "https://aswinsai.tech/#person" },
@@ -39,10 +39,10 @@ export const HomePage = () => {
   return (
     <main className="relative z-10 w-full max-w-full overflow-x-clip pt-4">
       <SEOHead
-        title="Aswinsai Palakonda | Co-founder & CTO at Clientura | Full Stack Developer"
-        description="Aswinsai Palakonda — Full Stack Developer & AI Enthusiast building high-performance web apps and scalable digital platforms. Explore projects, skills, and get in touch."
+        title="Palakonda Aswinsai | Co-founder & CTO at Clientura | Full Stack Developer"
+        description="Palakonda Aswinsai — Full Stack Developer & AI Enthusiast building high-performance web apps and scalable digital platforms. Explore projects, skills, and get in touch."
         canonical="https://aswinsai.tech"
-        keywords="Aswinsai Palakonda, Full Stack Developer, CTO Clientura, React Developer, TypeScript, Node.js, AI Enthusiast, Portfolio, Web Developer India, Freelance Developer"
+        keywords="Palakonda Aswinsai, Full Stack Developer, CTO Clientura, React Developer, TypeScript, Node.js, AI Enthusiast, Portfolio, Web Developer India, Freelance Developer"
         schema={homeSchemas}
       />
       <section id="hero" className="relative" aria-label="Introduction">

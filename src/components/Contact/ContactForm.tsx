@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Send, Mail, User, MessageSquare, Tag } from 'lucide-react';
 import { Toast } from './Toast';
-import emailjs from '@emailjs/browser';
 
 type FormData = {
   user_email: string;
@@ -27,27 +26,25 @@ export const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Create a form element dynamically for emailjs
-      const formElement = document.createElement('form');
-      Object.entries(data).forEach(([key, value]) => {
-        const input = document.createElement('input');
-        input.name = key;
-        input.value = value;
-        formElement.appendChild(input);
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
       });
 
-      await emailjs.send(
-        'service_k7vkq4b', 
-        'template_57op287', 
-        data as any,
-        'u7qbbQxNSSqzgO5HE'
-      );
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || 'Failed to send message');
+      }
 
       setToastMessage('Message sent successfully!');
       setShowToast(true);
       reset();
-    } catch (error) {
-      setToastMessage('Failed to send message. Please try again.');
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Failed to send message. Please try again.';
+      setToastMessage(msg);
       setShowToast(true);
     } finally {
       setIsSubmitting(false);

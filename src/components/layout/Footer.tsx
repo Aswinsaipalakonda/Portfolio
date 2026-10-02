@@ -12,8 +12,8 @@ export const Footer = () => {
           href="https://github.com/Aswinsaipalakonda" 
           target="_blank" 
           rel="noopener noreferrer"
-          aria-label="Visit Aswinsai Palakonda's GitHub profile"
-          title="GitHub — Aswinsai Palakonda"
+          aria-label="Visit Palakonda Aswinsai's GitHub profile"
+          title="GitHub — Palakonda Aswinsai"
           className="p-3 bg-white/5 rounded-full text-gray-400 hover:text-[#915EFF] hover:bg-white/10 transition-all transform hover:scale-110"
         >
           <Github className="w-6 h-6" />
@@ -22,8 +22,8 @@ export const Footer = () => {
           href="https://linkedin.com/in/aswinsaipalakonda/" 
           target="_blank" 
           rel="noopener noreferrer"
-          aria-label="Connect with Aswinsai Palakonda on LinkedIn"
-          title="LinkedIn — Aswinsai Palakonda"
+          aria-label="Connect with Palakonda Aswinsai on LinkedIn"
+          title="LinkedIn — Palakonda Aswinsai"
           className="p-3 bg-white/5 rounded-full text-gray-400 hover:text-[#915EFF] hover:bg-white/10 transition-all transform hover:scale-110"
         >
           <Linkedin className="w-6 h-6" />
@@ -32,15 +32,15 @@ export const Footer = () => {
           href="https://www.instagram.com/__itz_aswin" 
           target="_blank" 
           rel="noopener noreferrer"
-          aria-label="Follow Aswinsai Palakonda on Instagram"
-          title="Instagram — Aswinsai Palakonda"
+          aria-label="Follow Palakonda Aswinsai on Instagram"
+          title="Instagram — Palakonda Aswinsai"
           className="p-3 bg-white/5 rounded-full text-gray-400 hover:text-[#915EFF] hover:bg-white/10 transition-all transform hover:scale-110"
         >
           <Instagram className="w-6 h-6" />
         </a>
         <a 
           href="mailto:aswinsaipalakonda@gmail.com" 
-          aria-label="Email Aswinsai Palakonda"
+          aria-label="Email Palakonda Aswinsai"
           title="Email — aswinsaipalakonda@gmail.com"
           className="p-3 bg-white/5 rounded-full text-gray-400 hover:text-[#915EFF] hover:bg-white/10 transition-all transform hover:scale-110"
         >
@@ -52,19 +52,19 @@ export const Footer = () => {
       <nav className="mb-8" aria-label="Footer navigation">
         <ul className="flex justify-center flex-wrap gap-x-8 gap-y-4 text-gray-400 font-medium">
           <li>
-            <Link to="/" className="hover:text-white transition-colors" title="Aswinsai Palakonda — Home">Home</Link>
+            <Link to="/" className="hover:text-white transition-colors" title="Palakonda Aswinsai — Home">Home</Link>
           </li>
           <li>
-            <Link to="/about" className="hover:text-white transition-colors" title="About Aswinsai Palakonda">About</Link>
+            <Link to="/about" className="hover:text-white transition-colors" title="About Palakonda Aswinsai">About</Link>
           </li>
           <li>
-            <Link to="/certificates" className="hover:text-white transition-colors" title="Professional Certificates — Aswinsai Palakonda">Certificates</Link>
+            <Link to="/certificates" className="hover:text-white transition-colors" title="Professional Certificates — Palakonda Aswinsai">Certificates</Link>
           </li>
           <li>
-            <Link to="/contact" className="hover:text-white transition-colors" title="Contact Aswinsai Palakonda">Contact</Link>
+            <Link to="/contact" className="hover:text-white transition-colors" title="Contact Palakonda Aswinsai">Contact</Link>
           </li>
           <li>
-            <a href="/resume.html" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors inline-flex items-center gap-1" title="Resume — Aswinsai Palakonda">
+            <a href="/resume.html" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors inline-flex items-center gap-1" title="Resume — Palakonda Aswinsai">
               Resume <ExternalLink className="w-3 h-3" />
             </a>
           </li>
@@ -88,7 +88,7 @@ export const Footer = () => {
       
       {/* Copyright */}
       <p className="text-gray-500 text-sm text-center">
-        © {currentYear} Aswinsai Palakonda ❤️. All rights reserved.
+        © {currentYear} Palakonda Aswinsai ❤️. All rights reserved.
       </p>
     </footer>
   );

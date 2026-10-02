@@ -91,6 +91,7 @@ const StackingCardsContext = createContext<{
   totalCards?: number
 } | null>(null)
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useStackingCardsContext = () => {
   const context = useContext(StackingCardsContext)
   if (!context)

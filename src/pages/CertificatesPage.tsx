@@ -24,8 +24,8 @@ export const CertificatesPage = () => {
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      "name": "Professional Certificates & Credentials — Aswinsai Palakonda",
-      "description": "A comprehensive gallery of professional certifications, academic credentials, hackathon achievements, and technical certificates earned by Aswinsai Palakonda.",
+      "name": "Professional Certificates & Credentials — Palakonda Aswinsai",
+      "description": "A comprehensive gallery of professional certifications, academic credentials, hackathon achievements, and technical certificates earned by Palakonda Aswinsai.",
       "url": "https://aswinsai.tech/certificates",
       "isPartOf": { "@id": "https://aswinsai.tech/#website" },
       "about": { "@id": "https://aswinsai.tech/#person" },
@@ -36,7 +36,7 @@ export const CertificatesPage = () => {
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "name": "Aswinsai Palakonda Certificates",
+      "name": "Palakonda Aswinsai Certificates",
       "numberOfItems": certificatesData.length,
       "itemListElement": certificatesData.map((cert, index) => ({
         "@type": "ListItem",
@@ -59,10 +59,10 @@ export const CertificatesPage = () => {
   return (
     <div className="relative z-10 min-h-screen pt-20 flex flex-col justify-between">
       <SEOHead
-        title="Certificates & Credentials | Aswinsai Palakonda — Professional Achievements"
-        description="Browse all professional certifications, academic credentials, hackathon achievements, and technical certificates of Aswinsai Palakonda — from IEEE, IIT Roorkee, Anthropic, Cisco, Salesforce, TCS, and more."
+        title="Certificates & Credentials | Palakonda Aswinsai — Professional Achievements"
+        description="Browse all professional certifications, academic credentials, hackathon achievements, and technical certificates of Palakonda Aswinsai — from IEEE, IIT Roorkee, Anthropic, Cisco, Salesforce, TCS, and more."
         canonical="https://aswinsai.tech/certificates"
-        keywords="Aswinsai Palakonda Certificates, Developer Certifications, IEEE Certificate, IIT Roorkee Hackathon, MCP Anthropic, Cisco Networking, Salesforce Developer, Professional Credentials, Tech Certificates India"
+        keywords="Palakonda Aswinsai Certificates, Developer Certifications, IEEE Certificate, IIT Roorkee Hackathon, MCP Anthropic, Cisco Networking, Salesforce Developer, Professional Credentials, Tech Certificates India"
         schema={certificateSchemas}
       />
       

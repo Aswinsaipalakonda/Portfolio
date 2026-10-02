@@ -1,5 +1,5 @@
 # Robots.txt for https://aswinsai.tech
-# Aswinsai Palakonda — Full Stack Developer Portfolio
+# Palakonda Aswinsai — Full Stack Developer Portfolio
 
 # Allow all search engine bots
 User-agent: *

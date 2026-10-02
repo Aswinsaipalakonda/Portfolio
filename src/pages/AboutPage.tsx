@@ -21,8 +21,8 @@ export const AboutPage = () => {
     {
       "@context": "https://schema.org",
       "@type": "AboutPage",
-      "name": "About Aswinsai Palakonda",
-      "description": "Discover the journey, education, tech stack, and testimonials of Aswinsai Palakonda — Full Stack Developer, CTO at Clientura, and AI Enthusiast.",
+      "name": "About Palakonda Aswinsai",
+      "description": "Discover the journey, education, tech stack, and testimonials of Palakonda Aswinsai — Full Stack Developer, CTO at Clientura, and AI Enthusiast.",
       "url": "https://aswinsai.tech/about",
       "isPartOf": { "@id": "https://aswinsai.tech/#website" },
       "mainEntity": { "@id": "https://aswinsai.tech/#person" },
@@ -34,10 +34,10 @@ export const AboutPage = () => {
   return (
     <div className="relative z-10 min-h-screen pt-12 flex flex-col overflow-x-hidden">
       <SEOHead
-        title="About Aswinsai Palakonda | Full Stack Developer, Education & Skills"
-        description="Discover the journey, education, tech stack, and professional experience of Aswinsai Palakonda — Full Stack Developer, Co-founder & CTO at Clientura, and AI Enthusiast."
+        title="About Palakonda Aswinsai | Full Stack Developer, Education & Skills"
+        description="Discover the journey, education, tech stack, and professional experience of Palakonda Aswinsai — Full Stack Developer, Co-founder & CTO at Clientura, and AI Enthusiast."
         canonical="https://aswinsai.tech/about"
-        keywords="About Aswinsai Palakonda, Full Stack Developer journey, education, tech stack, skills, Clientura CTO, software developer India, developer biography"
+        keywords="About Palakonda Aswinsai, Full Stack Developer journey, education, tech stack, skills, Clientura CTO, software developer India, developer biography"
         schema={aboutSchemas}
       />
       
